@@ -38,7 +38,7 @@ public partial class Index : System.Web.UI.Page
         return strPassword;
     }
     #region Event Handlers
-    protected void login_Click(object sender, EventArgs e)
+    /*protected void login_Click(object sender, EventArgs e)
     {
         pass = encrypt(password.Text);
         if (db.getUser(email.Text, pass))
@@ -47,7 +47,7 @@ public partial class Index : System.Web.UI.Page
 
         }
         else email.Text = "nope";
-    }
+    }*/
     protected void register_Click(object sender, EventArgs e)
     {
         this.pass = encrypt(password_field.Text);
