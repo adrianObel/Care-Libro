@@ -53,7 +53,7 @@ public partial class Index : System.Web.UI.Page
         pass = encrypt(password.Text);
         if (db.getUser(email.Text, pass))
         {
-            Session["UserEmail"] = email.Text;
+            Session["UserEmail"] = email.Text.ToLowerInvariant();
             Response.Redirect("newsfeed.aspx");
             
         }
