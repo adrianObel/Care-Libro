@@ -21,7 +21,9 @@ public partial class Index : System.Web.UI.Page
 
     private void initMain()
     {
-        db = new DBConnect();/*
+        db = new DBConnect();
+        fillDate();
+        /*
         cookie = Request.Cookies["user_details"];
         if (cookie != null)
         {
@@ -29,7 +31,15 @@ public partial class Index : System.Web.UI.Page
             password.Text = cookie["user_pass"];
         }*/
     }
-
+    private void fillDate()
+    {
+        for (int i = (DateTime.Now.Year + 1); i > 1950; i--)
+            year.Items.Add(Convert.ToString(i));
+        for (int i = 0; i < 31; i++)
+            day.Items.Add(Convert.ToString(i));
+        for (int i = 1; i < 13; i++)
+            month.Items.Add(Convert.ToString(i));
+    }
     public string encrypt(string strChange)
     {
         byte[] pass = Encoding.UTF8.GetBytes(strChange);
