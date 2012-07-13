@@ -73,10 +73,7 @@ textarea {
   margin: 0;
   font-size: 100%;
   vertical-align: middle;
-  color: black;
 }
-
-
 button,
 input {
   *overflow: visible;
@@ -662,6 +659,11 @@ input[type="color"],
   font-size: 13px;
   line-height: 18px;
   color: #999999;
+}
+input[type="text"]{
+  height:25px;
+  color:black;
+
 }
 input,
 textarea {
@@ -3070,9 +3072,6 @@ input[type="submit"].btn.btn-mini {
 .navbar-form input[type="checkbox"],
 .navbar-form input[type="radio"] {
   margin-top: 3px;
-}
-.navbar-form input[type="text"]{
-  color:black;
 }
 .navbar-form .input-append,
 .navbar-form .input-prepend {

@@ -46,8 +46,8 @@
                         <asp:CheckBox ID="remember" runat="server" 
                             oncheckedchanged="remember_CheckedChanged" />
                         <asp:Label ID="Label1" runat="server" Text="Recordar contraseña"></asp:Label>
-                        <asp:Button ID="login" runat="server" Text="Ingresar" class="btn btn-primary" 
-                            onclick="login_Click" />
+                        <asp:Button ID="Button1" runat="server" Text="Ingresar" class="btn btn-primary" 
+                            />
                     </ul>
                 </div>
             </div>
