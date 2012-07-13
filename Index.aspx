@@ -105,7 +105,7 @@
             <div class="control-group">
                 <asp:Label ID="dob_modal" runat="server" Text="Fecha de nacimiento" class="control-label"></asp:Label>
                 <div class="controls">
-                    <asp:DropDownList ID="day" runat="server" class="span1">
+                    <asp:DropDownList ID="day" placeholder="Dia" runat="server" class="span1">
                         <asp:ListItem>Dia</asp:ListItem>
                     </asp:DropDownList>
                     <asp:DropDownList ID="month" runat="server" class="span1">
