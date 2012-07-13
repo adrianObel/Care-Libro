@@ -2,33 +2,98 @@
     CodeFile="profilemodification.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
+<li class="nav-header">Menú</li>
+    <li class="active"><a href="#aboutme">Sobre mí</a></li>
+    <li><a href="#interest_menu">Intereses</a></li>
+    <li><a href="#education_menu">Educacion</a></li>
+    <li><a href="#hobbies_menu">Hobbies</a></li>
+    <li><a href="#favorites">Favoritos</a></li>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
         <h1>
             Cambie sus datos de perfil aqui:</h1>
-        <br />
-        <h3>
-            Sobre mi:</h3>
-        <hr />
-        <asp:TextBox ID="about_me" runat="server" Style="width: 835px; height: 200px;" TextMode="MultiLine"></asp:TextBox><br />
-        <h3>
-            Relacion</h3>
-        <asp:DropDownList ID="relationship" runat="server" CssClass="span3">
-            <asp:ListItem>Soltero</asp:ListItem>
-            <asp:ListItem>En una relación</asp:ListItem>
-            <asp:ListItem>Casado</asp:ListItem>
-            <asp:ListItem>Viudo</asp:ListItem>
-            <asp:ListItem>Concubino</asp:ListItem>
-            <asp:ListItem>Arrejuntao&#39;</asp:ListItem>
-            <asp:ListItem>Es complicado</asp:ListItem>
-        </asp:DropDownList>
-        
-        <h3>Estoy buscando...</h3>
-        <asp:DropDownList ID="looking_for" runat="server" CssClass="span3">
-            <asp:ListItem>Hombres</asp:ListItem>
-            <asp:ListItem>Mujeres</asp:ListItem>
-            <asp:ListItem>Mujeres y hombres</asp:ListItem>
-        </asp:DropDownList>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <section id="aboutme">
+            <h3>
+                Sobre mi:</h3>
+            <hr />
+            <asp:TextBox ID="about_me" runat="server" Style="width: 960px; height: 200px;" TextMode="MultiLine"></asp:TextBox><br />
+            <h3>
+                Relacion</h3>
+            <asp:DropDownList ID="relationship" runat="server" CssClass="span3">
+                <asp:ListItem>Soltero</asp:ListItem>
+                <asp:ListItem>En una relación</asp:ListItem>
+                <asp:ListItem>Casado</asp:ListItem>
+                <asp:ListItem>Viudo</asp:ListItem>
+                <asp:ListItem>Concubino</asp:ListItem>
+                <asp:ListItem>Arrejuntao&#39;</asp:ListItem>
+                <asp:ListItem>Es complicado</asp:ListItem>
+            </asp:DropDownList>
+            <h3>
+                Estoy buscando...</h3>
+            <asp:DropDownList ID="looking_for" runat="server" CssClass="span3">
+                <asp:ListItem>Hombres</asp:ListItem>
+                <asp:ListItem>Mujeres</asp:ListItem>
+                <asp:ListItem>Mujeres y hombres</asp:ListItem>
+            </asp:DropDownList>
+            <h3>
+                Número de Telefono</h3>
+            <asp:TextBox ID="phone" placeholder="+58 (123)4567890" runat="server"></asp:TextBox>
+            </section>
+            <section id="interest_menu">
+            <h3>
+                Intereses</h3>
+            <hr />
+            <asp:TextBox ID="interest" runat="server" Style="width: 960px; height: 100px;" TextMode="MultiLine" placeholder="Ejemplo: Noticias, programacion, negocios, etc."></asp:TextBox>
+            </section>
+            <section id="education_menu">
+            <h3>
+                Educacion</h3>
+            <hr />
+            <asp:TextBox ID="education" runat="server" Style="width: 960px; height: 100px;" TextMode="MultiLine"
+                placeholder="Ejemplo: Universidad Tecnologica del Centro, Colegio Sagrado Corazon, etc."></asp:TextBox>
+            </section>
+            <section id="hobbies_menu">
+            <h3>
+                Hobbies</h3>
+            <hr />
+            <asp:TextBox ID="hobbies" runat="server" Style="width: 960px; height: 100px;" TextMode="MultiLine"
+                placeholder="Ejemplo: Futbol, leer, cantar, etc."></asp:TextBox>
+            </section>
+            <section id="favorites">
+            <h3>
+                Peliculas preferidas</h3>
+            <hr />
+            <asp:TextBox ID="fav_movies" runat="server" Style="width: 960px; height: 100px;"
+                TextMode="MultiLine" placeholder="Ejemplo: Pulp Fiction, A Clockwork Orange, Scarface, etc."></asp:TextBox>
+            <h3>
+                Artistas preferidos</h3>
+            <hr />
+            <asp:TextBox ID="fav_artists" runat="server" Style="width: 960px; height: 100px;"
+                TextMode="MultiLine" placeholder="Ejemplo: David Gilmour, Steven Tyler, Ozzy Osbourne, etc."></asp:TextBox>
+            <h3>
+                Libros preferidos</h3>
+            <hr />
+            <asp:TextBox ID="fav_books" runat="server" Style="width: 960px; height: 100px;" TextMode="MultiLine"
+                placeholder="Ejemplo: El principito, Don Quijote, Mein Kampf, etc."></asp:TextBox>
+            <h3>
+                Animales preferidos</h3>
+            <hr />
+            <asp:TextBox ID="fav_animals" runat="server" Style="width: 960px; height: 100px;"
+                TextMode="MultiLine" placeholder="Ejemplo: Gatos, perros, unicornios, etc."></asp:TextBox><br />
+            <br />
+            </section>
+        </div>
+        <div class="row-fluid">
+            <div class="span6">
+                <button class="btn btn-primary btn-large" style="width: 470px; height: 50px;" id="save_modifications">
+                    Guardar</button></div>
+            <div class="span6">
+                <button class="btn btn-danger btn-large" style="width: 470px; height: 50px;" id="cancel_modifications">
+                    Cancelar</button></div>
+        </div>
     </div>
 </asp:Content>
