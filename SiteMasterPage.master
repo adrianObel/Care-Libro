@@ -35,9 +35,9 @@
             padding: 9px 0;
         }
     </style>
-    <title></title>
+    <title>Care' Libro</title>
 </head>
-<body>
+<body data-spy="scroll">
     <form id="form2" runat="server">
     <div>
         <div class="navbar navbar-fixed-top">
@@ -71,7 +71,7 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3">
-                    <div class="well sidebar-nav">
+                    <div class="well sidebar-nav" style="position:fixed; width:300px;">
                         <ul class="nav nav-list">
                             <asp:ContentPlaceHolder ID="sidebar" runat="server">
 
@@ -99,5 +99,6 @@
     </form>
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="js/bootstrap-scrollspy.js" type="text/javascript"></script>
 </body>
 </html>
