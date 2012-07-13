@@ -23,5 +23,12 @@
             <asp:ListItem>Arrejuntao&#39;</asp:ListItem>
             <asp:ListItem>Es complicado</asp:ListItem>
         </asp:DropDownList>
+        
+        <h3>Estoy buscando...</h3>
+        <asp:DropDownList ID="looking_for" runat="server" CssClass="span3">
+            <asp:ListItem>Hombres</asp:ListItem>
+            <asp:ListItem>Mujeres</asp:ListItem>
+            <asp:ListItem>Mujeres y hombres</asp:ListItem>
+        </asp:DropDownList>
     </div>
 </asp:Content>
