@@ -19,7 +19,7 @@ public partial class Index : System.Web.UI.Page
     }
 
 
-    private void initMain()
+    protected void initMain()
     {
         db = new DBConnect();
         fillDate();
@@ -31,7 +31,7 @@ public partial class Index : System.Web.UI.Page
             password.Text = cookie["user_pass"];
         }*/
     }
-    private void fillDate()
+    protected void fillDate()
     {
         for (int i = (DateTime.Now.Year + 1); i > 1950; i--)
             year.Items.Add(Convert.ToString(i));
