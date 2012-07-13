@@ -29,7 +29,7 @@
             padding-bottom: 40px;
         }
     </style>
-    <title></title>
+    <title>Care' Libro</title>
 </head>
 <body>
     <form id="form1" runat="server" class="navbar-form">
@@ -42,7 +42,7 @@
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         <asp:TextBox ID="email" runat="server" placeholder="Email"></asp:TextBox>
-                        <asp:TextBox ID="password" runat="server" placeholder="Password"></asp:TextBox>
+                        <asp:TextBox ID="password" runat="server" placeholder="Password" TextMode="Password" style="height:25px; color:Black;"></asp:TextBox>
                         <asp:CheckBox ID="remember" runat="server" 
                             oncheckedchanged="remember_CheckedChanged" />
                         <asp:Label ID="Label1" runat="server" Text="Recordar contraseña"></asp:Label>
@@ -89,7 +89,7 @@
             <div class="control-group">
                 <asp:Label ID="pass_modal" runat="server" Text="Contraseña" class="control-label"></asp:Label>
                 <div class="controls">
-                    <asp:TextBox ID="password_field" runat="server" class="span3"></asp:TextBox>
+                    <asp:TextBox ID="password_field" runat="server" class="span3" TextMode="Password" style="height:25px; color:Black;"></asp:TextBox>
                 </div>
             </div>
             <div class="control-group">
@@ -107,13 +107,13 @@
                 <asp:Label ID="dob_modal" runat="server" Text="Fecha de nacimiento" class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:DropDownList ID="day" placeholder="Dia" runat="server" class="span1">
-                        <asp:ListItem>Dia</asp:ListItem>
+                        
                     </asp:DropDownList>
                     <asp:DropDownList ID="month" runat="server" class="span1">
-                        <asp:ListItem>Mes</asp:ListItem>
+                        
                     </asp:DropDownList>
                     <asp:DropDownList ID="year" runat="server" class="span1">
-                        <asp:ListItem>Año</asp:ListItem>
+                     
                     </asp:DropDownList>
                 </div>
             </div>
