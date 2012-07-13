@@ -62,7 +62,7 @@
                                     <li><a href="#"><i class="icon-user"></i>Mi perfil</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#"><i class="icon-wrench"></i>Modificar perfil</a></li>
-                                    <li><a href="#"><i class="icon-remove"></i>Salir</a></li>
+                                    <li><asp:LinkButton ID="logout" OnClick="logout_Click" runat="server"><i class="icon-remove"></i>Salir</asp:LinkButton></li>
                                 </ul>
                             </div>
                         </ul>
@@ -75,6 +75,7 @@
                 <div class="span3">
                     <div class="well sidebar-nav" style="position:fixed; width:300px;">
                         <ul class="nav nav-list">
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                             <asp:ContentPlaceHolder ID="sidebar" runat="server">
 
                             </asp:ContentPlaceHolder>
