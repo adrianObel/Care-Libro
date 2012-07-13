@@ -54,9 +54,7 @@
                         </ul>
                         <ul class="nav pull-right">
                             <div class="btn-group">
-                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                    Nombre y apellido del usuario <i class="caret"></i>
-                                </button>
+                                <asp:Button id="dropdown_menu_button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" runat="server" Text="Nombre" /> 
                                 <ul class="dropdown-menu">
                                     <li class="active"><a href="#"><i class="icon-white icon-home"></i>Home</a></li>
                                     <li><a href="#"><i class="icon-user"></i>Mi perfil</a></li>
@@ -75,7 +73,6 @@
                 <div class="span3">
                     <div class="well sidebar-nav">
                         <ul class="nav nav-list">
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                             <asp:ContentPlaceHolder ID="sidebar" runat="server">
 
                             </asp:ContentPlaceHolder>
