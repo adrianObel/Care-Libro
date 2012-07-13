@@ -27,7 +27,9 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     }
     protected void initStruct()
     {
-        
+        string detail = userData.Tables["user"].Rows[0]["name"].ToString() + " " 
+                      + userData.Tables["user"].Rows[0]["lastname"].ToString();
+        dropdown_menu_button.Text = detail;
     }
     protected void logout_Click(object sender,EventArgs e)
     {
