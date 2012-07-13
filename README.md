@@ -1,6 +1,6 @@
 Care--Libro
 ===========
 
-Proyecto de Aplicaciones de Internet 1 hecho con Bootstrap CSS.
+Open Source ASP.net && Bootstrap Social Networking Site
 
 Adrian Obelmejias & Roger Gonzalez
