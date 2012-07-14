@@ -49,9 +49,11 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void save_modifications_Click(object sender,EventArgs e)
     {
-        db.insert("UPDATE profile SET about_me = 'a',relationship = 'x', looking_for='a'" +
-        ",phone = 'p',interests = 'i',education = 'e',hobbies = 'h',fav_movies = 'm',fav_artists = 'fa'"+
-        ",fav_books = 'fb',fav_animals = 'gg' WHERE user_id = '2'");
+        db.insert("UPDATE profile SET about_me = '"+about_me.Text+"',relationship = '"+relationship.SelectedItem+"'"+
+        ", looking_for='"+looking_for.SelectedItem+"',phone = '"+phone.Text+"',interests = '"+interest.Text+"'"+
+        ",education = '"+education.Text+"',hobbies = '"+hobbies.Text+"',fav_movies = '"+fav_movies.Text+"'"+
+        ",fav_artists = '"+fav_artists.Text+"',fav_books = '"+fav_books.Text+"',fav_animals = '"+fav_animals.Text+"'"+
+        "WHERE user_id = '"+userid+"'");
        }
 
 
