@@ -33,32 +33,37 @@ public partial class _Default : System.Web.UI.Page
     {
         if (profileData.Rows.Count != 0)
         {
-            about_me.Text = profileData.Rows[0]["about_me"].ToString();
-            relationship.SelectedIndex = relationStatus();
-            looking_for.SelectedIndex = lookingFor();
-            phone.Text = profileData.Rows[0]["phone"].ToString();
-            interest.Text = profileData.Rows[0]["interests"].ToString();
-            education.Text = profileData.Rows[0]["education"].ToString();
-            hobbies.Text = profileData.Rows[0]["hobbies"].ToString();
-            fav_movies.Text = profileData.Rows[0]["fav_movies"].ToString();
-            fav_artists.Text = profileData.Rows[0]["fav_artists"].ToString();
-            fav_books.Text = profileData.Rows[0]["fav_books"].ToString();
-            fav_animals.Text = profileData.Rows[0]["fav_animals"].ToString();
+            if (!IsPostBack)
+            {
+                about_me.Text = profileData.Rows[0]["about_me"].ToString();
+                relationship.SelectedIndex = relationStatus();
+                looking_for.SelectedIndex = lookingFor();
+                phone.Text = profileData.Rows[0]["phone"].ToString();
+                interest.Text = profileData.Rows[0]["interests"].ToString();
+                education.Text = profileData.Rows[0]["education"].ToString();
+                hobbies.Text = profileData.Rows[0]["hobbies"].ToString();
+                fav_movies.Text = profileData.Rows[0]["fav_movies"].ToString();
+                fav_artists.Text = profileData.Rows[0]["fav_artists"].ToString();
+                fav_books.Text = profileData.Rows[0]["fav_books"].ToString();
+                fav_animals.Text = profileData.Rows[0]["fav_animals"].ToString();
+            }
         }
         else
             createProfile();
     }
     protected void save_modifications_Click(object sender,EventArgs e)
     {
-        db.insert("UPDATE profile SET about_me = 'a',relationship = 'x', looking_for='a'" +
-        ",phone = 'p',interests = 'i',education = 'e',hobbies = 'h',fav_movies = 'm',fav_artists = 'fa'"+
-        ",fav_books = 'fb',fav_animals = 'gg' WHERE user_id = '2'");
+        db.insert("UPDATE profile SET about_me = '"+about_me.Text+"',relationship = '"+relationship.SelectedItem+"'"+
+        ", looking_for='"+looking_for.SelectedItem+"',phone = '"+phone.Text+"',interests = '"+interest.Text+"'"+
+        ",education = '"+education.Text+"',hobbies = '"+hobbies.Text+"',fav_movies = '"+fav_movies.Text+"'"+
+        ",fav_artists = '"+fav_artists.Text+"',fav_books = '"+fav_books.Text+"',fav_animals = '"+fav_animals.Text+"'"+
+        "WHERE user_id = '"+userid+"'");
        }
 
 
     protected void cancel_modifications_Click(object sender, EventArgs e)
     {
-      
+        Response.Write("<script type='text/javascript'>alert('"+about_me.Text+"') </script>");
     }
     protected byte relationStatus()
     {
