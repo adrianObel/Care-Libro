@@ -2,10 +2,12 @@
     CodeFile="newsfeed.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
+    <ul class="nav nav-list">
     <li class="nav-header">Menú</li>
     <li class="active"><a href="#">Noticias</a></li>
     <li><a href="#">Amigos</a></li>
     <li><a href="#">Fotos</a></li>
+    </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">

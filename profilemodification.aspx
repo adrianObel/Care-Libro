@@ -2,12 +2,14 @@
     CodeFile="profilemodification.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
-    <li class="nav-header">Menú</li>
-    <li class="active"><a href="#aboutme">Sobre mí</a></li>
-    <li><a href="#interest_menu">Intereses</a></li>
-    <li><a href="#education_menu">Educacion</a></li>
-    <li><a href="#hobbies_menu">Hobbies</a></li>
-    <li><a href="#favorites">Favoritos</a></li>
+    <ul class="nav nav-list">
+        <li class="nav-header">Menú</li>
+        <li class="active"><a href="#aboutme">Sobre mí</a></li>
+        <li><a href="#interest_menu">Intereses</a></li>
+        <li><a href="#education_menu">Educacion</a></li>
+        <li><a href="#hobbies_menu">Hobbies</a></li>
+        <li><a href="#favorites">Favoritos</a></li>
+    </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
@@ -42,6 +44,11 @@
             <h3>
                 Número de Telefono</h3>
             <asp:TextBox ID="phone" placeholder="+58 (123)4567890" runat="server"></asp:TextBox>
+            <h3>Imagen de perfil</h3>
+                <asp:FileUpload id="FileUploadControl" runat="server" />
+    <asp:Button runat="server" id="UploadButton" class="btn btn-primary" text="Subir" onclick="UploadButton_Click" />
+    <br /><br />
+    <asp:Label runat="server" id="StatusLabel" text="Estatus de la subida: " />
             </section>
             <section id="interest_menu">
             <h3>
@@ -86,10 +93,13 @@
         </div>
         <div class="row-fluid">
             <div class="span6">
-                <asp:Button ID="save_modifications" OnClick="save_modifications_Click" class="btn btn-primary btn-large" style="width: 470px; height: 50px;" runat="server" Text="Guardar" />
+                <asp:Button ID="save_modifications" OnClick="save_modifications_Click" class="btn btn-primary btn-large"
+                    Style="width: 470px; height: 50px;" runat="server" Text="Guardar" />
             </div>
             <div class="span6">
-                <asp:Button class="btn btn-danger btn-large" OnClick="cancel_modifications_Click" style="width: 470px; height: 50px;" id="cancel_modifications" runat="server" Text="Cancelar" />
+                <asp:Button class="btn btn-danger btn-large" OnClick="cancel_modifications_Click"
+                    Style="width: 470px; height: 50px;" ID="cancel_modifications" runat="server"
+                    Text="Cancelar" />
             </div>
         </div>
     </div>
