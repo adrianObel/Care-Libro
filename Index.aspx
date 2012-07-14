@@ -1,4 +1,4 @@
-﻿  <!--
+﻿<!--
     Care-Libro. A social network proyect builted in ASP.net, C# and Boostrap CSS.
     Copyright (C) 2012 Roger Gonzalez - Adrian Obelmejias
 
@@ -42,13 +42,11 @@
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         <asp:TextBox ID="email" runat="server" placeholder="Email"></asp:TextBox>
-                        <asp:TextBox ID="password" runat="server" placeholder="Password" TextMode="Password" style="height:25px; color:Black;"></asp:TextBox>
-                        <asp:CheckBox ID="remember" runat="server" 
-                            oncheckedchanged="remember_CheckedChanged" />
+                        <asp:TextBox ID="password" runat="server" placeholder="Password" TextMode="Password"
+                            Style="height: 25px; color: Black;"></asp:TextBox>
+                        <asp:CheckBox ID="remember" runat="server" OnCheckedChanged="remember_CheckedChanged" />
                         <asp:Label ID="Label1" runat="server" Text="Recordar contraseña"></asp:Label>
-                        <asp:Button ID="login" runat="server" Text="Ingresar" class="btn btn-primary" 
-                            onclick="login_Click"
-                            />
+                        <asp:Button ID="login" runat="server" Text="Ingresar" class="btn btn-primary" OnClick="login_Click" />
                     </ul>
                 </div>
             </div>
@@ -89,7 +87,8 @@
             <div class="control-group">
                 <asp:Label ID="pass_modal" runat="server" Text="Contraseña" class="control-label"></asp:Label>
                 <div class="controls">
-                    <asp:TextBox ID="password_field" runat="server" class="span3" TextMode="Password" style="height:25px; color:Black;"></asp:TextBox>
+                    <asp:TextBox ID="password_field" runat="server" class="span3" TextMode="Password"
+                        Style="height: 25px; color: Black;"></asp:TextBox>
                 </div>
             </div>
             <div class="control-group">
@@ -107,27 +106,22 @@
                 <asp:Label ID="dob_modal" runat="server" Text="Fecha de nacimiento" class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:DropDownList ID="day" placeholder="Dia" runat="server" class="span1">
-                        
                     </asp:DropDownList>
                     <asp:DropDownList ID="month" runat="server" class="span1">
-                        
                     </asp:DropDownList>
                     <asp:DropDownList ID="year" runat="server" class="span1">
-                     
                     </asp:DropDownList>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-             <asp:LinkButton  ID="register" class="btn btn-primary" runat="server" 
-                onclick="register_Click">Register</asp:LinkButton>
-             <a href="#" class="btn btn-danger"
-                data-dismiss="modal">Cerrar</a>
+            <asp:LinkButton ID="register" class="btn btn-primary" runat="server" OnClick="register_Click">Register</asp:LinkButton>
+            <a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
         </div>
     </div>
     </form>
     <div class="container">
-        <div> 
+        <div>
             <div class="hero-unit">
                 <h1>
                     Bienvenido a Care' Libro</h1>

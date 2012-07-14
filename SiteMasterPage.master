@@ -48,20 +48,17 @@
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                     </a><a class="brand" href="#">Care' Libro</a>
                     <div class="nav-collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="#">Alguna etiqueta</a></li>
-                            <li><a href="#">Otra etiqueta</a></li>
-                            <li><a href="#">Una etiqueta mas</a></li>
-                        </ul>
                         <ul class="nav pull-right">
                             <div class="btn-group">
-                                <asp:Button id="dropdown_menu_button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" runat="server" Text="Nombre" /> 
+                                <asp:Button ID="dropdown_menu_button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    runat="server" Text="Nombre" />
                                 <ul class="dropdown-menu">
                                     <li class="active"><a href="#"><i class="icon-white icon-home"></i>Home</a></li>
                                     <li><a href="#"><i class="icon-user"></i>Mi perfil</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#"><i class="icon-wrench"></i>Modificar perfil</a></li>
-                                    <li><asp:LinkButton ID="logout" OnClick="logout_Click" runat="server"><i class="icon-remove"></i>Salir</asp:LinkButton></li>
+                                    <li>
+                                        <asp:LinkButton ID="logout" OnClick="logout_Click" runat="server"><i class="icon-remove"></i>Salir</asp:LinkButton></li>
                                 </ul>
                             </div>
                         </ul>
@@ -72,23 +69,20 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3">
-                    <div class="well sidebar-nav" style="position:fixed; width:300px;">
+                    <div class="well sidebar-nav" style="position: fixed; width: 300px;">
                         <ul class="nav nav-list">
                             <asp:ContentPlaceHolder ID="sidebar" runat="server">
-
                             </asp:ContentPlaceHolder>
                         </ul>
                     </div>
                     <!--/.well -->
                 </div>
-                <!--/span-->   
+                <!--/span-->
                 <div class="span9">
-                <asp:ContentPlaceHolder ID="middle" runat="server">
-                    
+                    <asp:ContentPlaceHolder ID="middle" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
             </div>
-
             <hr>
             <footer>
         <p>&copy; Roger Gonzalez, Adrian Obelmejias. Care'Libro 2012.</p>
