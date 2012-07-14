@@ -32,17 +32,20 @@ public partial class _Default : System.Web.UI.Page
     {
         if (profileData.Rows.Count != 0)
         {
-            about_me.Text = profileData.Rows[0]["about_me"].ToString();
-            relationship.SelectedIndex = relationStatus();
-            looking_for.SelectedIndex = lookingFor();
-            phone.Text = profileData.Rows[0]["phone"].ToString();
-            interest.Text = profileData.Rows[0]["interests"].ToString();
-            education.Text = profileData.Rows[0]["education"].ToString();
-            hobbies.Text = profileData.Rows[0]["hobbies"].ToString();
-            fav_movies.Text = profileData.Rows[0]["fav_movies"].ToString();
-            fav_artists.Text = profileData.Rows[0]["fav_artists"].ToString();
-            fav_books.Text = profileData.Rows[0]["fav_books"].ToString();
-            fav_animals.Text = profileData.Rows[0]["fav_animals"].ToString();
+            if (!IsPostBack)
+            {
+                about_me.Text = profileData.Rows[0]["about_me"].ToString();
+                relationship.SelectedIndex = relationStatus();
+                looking_for.SelectedIndex = lookingFor();
+                phone.Text = profileData.Rows[0]["phone"].ToString();
+                interest.Text = profileData.Rows[0]["interests"].ToString();
+                education.Text = profileData.Rows[0]["education"].ToString();
+                hobbies.Text = profileData.Rows[0]["hobbies"].ToString();
+                fav_movies.Text = profileData.Rows[0]["fav_movies"].ToString();
+                fav_artists.Text = profileData.Rows[0]["fav_artists"].ToString();
+                fav_books.Text = profileData.Rows[0]["fav_books"].ToString();
+                fav_animals.Text = profileData.Rows[0]["fav_animals"].ToString();
+            }
         }
         else
             createProfile();
@@ -59,7 +62,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void cancel_modifications_Click(object sender, EventArgs e)
     {
-      
+        Response.Write("<script type='text/javascript'>alert('"+about_me.Text+"') </script>");
     }
     protected byte relationStatus()
     {
