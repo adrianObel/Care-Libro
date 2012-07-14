@@ -35,9 +35,9 @@
             <h3>
                 Estoy buscando...</h3>
             <asp:DropDownList ID="looking_for" runat="server" CssClass="span3">
-                <asp:ListItem>Hombres</asp:ListItem>
                 <asp:ListItem>Mujeres</asp:ListItem>
-                <asp:ListItem>Mujeres y hombres</asp:ListItem>
+                <asp:ListItem>Hombres</asp:ListItem>
+                <asp:ListItem>Hombres o Mujeres</asp:ListItem>
             </asp:DropDownList>
             <h3>
                 Número de Telefono</h3>
@@ -86,11 +86,11 @@
         </div>
         <div class="row-fluid">
             <div class="span6">
-                <button class="btn btn-primary btn-large" style="width: 470px; height: 50px;" id="save_modifications">
-                    Guardar</button></div>
+                <asp:Button ID="save_modifications" OnClick="save_modifications_Click" class="btn btn-primary btn-large" style="width: 470px; height: 50px;" runat="server" Text="Guardar" />
+            </div>
             <div class="span6">
-                <button class="btn btn-danger btn-large" style="width: 470px; height: 50px;" id="cancel_modifications">
-                    Cancelar</button></div>
+                <asp:Button class="btn btn-danger btn-large" OnClick="cancel_modifications_Click" style="width: 470px; height: 50px;" id="cancel_modifications" runat="server" Text="Cancelar" />
+            </div>
         </div>
     </div>
 </asp:Content>

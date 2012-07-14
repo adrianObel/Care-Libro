@@ -16,6 +16,10 @@ public partial class Index : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         initMain();
+        if (Session["UserEmail"] != null)
+        {
+            Response.Redirect("newsfeed.aspx");
+        }
     }
 
 
@@ -23,17 +27,11 @@ public partial class Index : System.Web.UI.Page
     {
         db = new DBConnect();
         fillDate();
-        /*
-        cookie = Request.Cookies["user_details"];
-        if (cookie != null)
-        {
-            email.Text = cookie["user_email"];
-            password.Text = cookie["user_pass"];
-        }*/
+       
     }
     protected void fillDate()
     {
-        for (int i = (DateTime.Now.Year + 1); i > 1950; i--)
+        for (int i = (DateTime.Now.Year); i > 1950; i--)
             year.Items.Add(Convert.ToString(i));
         for (int i = 0; i < 31; i++)
             day.Items.Add(Convert.ToString(i));
@@ -54,6 +52,7 @@ public partial class Index : System.Web.UI.Page
         if (db.getUser(email.Text, pass))
         {
             Session["UserEmail"] = email.Text.ToLowerInvariant();
+            Session.Timeout = 40;
             Response.Redirect("newsfeed.aspx");
             
         }
@@ -80,22 +79,7 @@ public partial class Index : System.Web.UI.Page
     }
     protected void remember_CheckedChanged(object sender, EventArgs e)
     {
-        /*
-        if (remember.Checked)
-        {
-            if (email.Text != null && password.Text != null)
-            {
-                cookie = Request.Cookies["user_details"];
-                if (cookie == null)
-                {
-                    cookie = new HttpCookie("user_details");
-                }
-                cookie["user_email"] = email.Text;
-                cookie["user_pass"] = password.Text;
-                cookie.Expires = DateTime.Now.AddYears(1);
-                Response.Cookies.Add(cookie);
-            }
-        }*/
+        
     }
     #endregion
 }

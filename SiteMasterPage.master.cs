@@ -8,7 +8,7 @@ using System.Data;
 
 public partial class SiteMasterPage : System.Web.UI.MasterPage
 {
-    private DataSet userData;
+    private DataTable userData;
     private DBConnect db = new DBConnect();
 
     protected void Page_Load(object sender, EventArgs e)
@@ -19,7 +19,7 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     {
         if (Session["UserEmail"] != null)
         {
-            userData = db.query("SELECT * FROM user WHERE email = '" + Session["UserEmail"].ToString() + "'", "user");
+            userData = db.query("SELECT * FROM user WHERE email = '" + Session["UserEmail"].ToString() + "'");
             initStruct();
         }
         else
@@ -27,9 +27,8 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     }
     protected void initStruct()
     {
-        string detail = userData.Tables["user"].Rows[0]["name"].ToString() + " " 
-                      + userData.Tables["user"].Rows[0]["lastname"].ToString();
-        dropdown_menu_button.Text = detail;
+        dropdown_menu_button.Text = userData.Rows[0]["name"].ToString() + " " 
+                      + userData.Rows[0]["lastname"].ToString();
     }
     protected void logout_Click(object sender,EventArgs e)
     {
