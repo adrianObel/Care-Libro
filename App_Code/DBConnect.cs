@@ -11,7 +11,7 @@ public class DBConnect
     private MySqlConnection cn;
     private MySqlDataAdapter da;
     private MySqlCommand cmd;
-    private DataSet ds;
+    private DataTable dt;
 
 	public DBConnect()
 	{
@@ -42,12 +42,12 @@ public class DBConnect
             return false;
         }
     }
-    public DataSet query(string sql,string table)
+    public DataTable query(string sql)
     {
         da = new MySqlDataAdapter(sql, cn);
-        ds = new DataSet();
-        da.Fill(ds,table);
-        return ds;
+        dt = new DataTable();
+        da.Fill(dt);
+        return dt;
     }
     public void insert(string sql)
     {
@@ -62,8 +62,8 @@ public class DBConnect
     //Method to retrieve user details and validate to see if exist
     public bool getUser(string id,string pass)
     {
-            ds = query("SELECT * FROM user WHERE email ='" + id + "' AND password = '" + pass + "' ", "user");
-            if (ds.Tables["user"].Rows.Count != 0)
+            dt = query("SELECT * FROM user WHERE email ='" + id + "' AND password = '" + pass + "' ");
+            if (dt.Rows.Count != 0)
                 return true;
             else 
             return false;
