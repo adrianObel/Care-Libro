@@ -11,6 +11,12 @@
     <br />
     <button class="btn btn-primary" data-toggle="modal" href="#modal-registro">
         Mas...</button>
+    <hr />
+    <ul class="nav nav-list">
+        <li class="nav-header">Menú</li>
+        <li><a href="#">Amigos</a></li>
+        <li><a href="#">Fotos</a></li>
+    </ul>
     <div id="modal-registro" class="modal fade" style="display: none;">
         <div class="modal-header">
             <a class="close" data-dismiss="modal">×</a>
@@ -83,6 +89,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
+        <div class="row">
+            <div class="span2">
+                <asp:Image ID="FriendImage1" runat="server" Width="128px" /></div>
+            <div class="span2">
+                <asp:Image ID="FriendImage2" runat="server" Width="128px" /></div>
+            <div class="span2">
+                <asp:Image ID="FriendImage3" runat="server" Width="128px" /></div>
+            <div class="span2">
+                <asp:Image ID="FriendImage4" runat="server" Width="128px" /></div>
+            <div class="span2">
+                <asp:Image ID="FriendImage5" runat="server" Width="128px" /></div>
+            <div class="span2">
+                <asp:Image ID="FriendImage6" runat="server" Width="128px" /></div>
+        </div>
         <h1>
             Escribe algo...
         </h1>

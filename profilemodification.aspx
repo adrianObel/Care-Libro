@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
-        <li class="active"><a href="#aboutme">Sobre mí</a></li>
+        <li><a href="#aboutme">Sobre mí</a></li>
         <li><a href="#interest_menu">Intereses</a></li>
         <li><a href="#education_menu">Educacion</a></li>
         <li><a href="#hobbies_menu">Hobbies</a></li>
