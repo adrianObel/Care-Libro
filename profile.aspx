@@ -2,7 +2,7 @@
     CodeFile="profile.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
-    <asp:Image ID="profilepic" runat="server" /><br />
+    <asp:Image ID="profilepic" runat="server" Width="150px" Height="150px" /><br />
     <button id="add_friend" class="btn btn-success btn-large friendbutton">
         Agregar como amigo</button><br /><br />
     <asp:Label ID="name" runat="server" Text="Nombre"></asp:Label><br />
