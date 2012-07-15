@@ -21,7 +21,7 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
         if (Session["UserEmail"] != null)
         {
             userData = db.query("SELECT * FROM user LEFT JOIN profile ON user.user_id = "+
-                "profile.user_id AND user.email = '" + Session["UserEmail"].ToString() + "'");
+                "profile.user_id WHERE user.email = '" + Session["UserEmail"].ToString() + "'");
         }
         else
             Response.Redirect("Index.aspx");
@@ -29,9 +29,9 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     protected void initStruct()
     {
         dropdown_menu_button.Text = userData.Rows[0]["name"].ToString() + " " 
-                      + userData.Rows[0]["created_at"].ToString();
+                      + userData.Rows[0]["lastname"].ToString();
 
-        profile.NavigateUrl = "profile.aspx?user=0";
+        profile.NavigateUrl = "profile.aspx?user= "+userData.Rows[0]["url"].ToString();;
     }
   
     protected void logout_Click(object sender,EventArgs e)

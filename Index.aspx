@@ -171,7 +171,7 @@
         <p>"Ah, ok" -Adrian Obelmejias</p>
         <p>"Look behind you, a three-headed monkey!" -Roger Gonzalez</p>
       </footer>
-    <script src="/js/jquery.js" type="text/javascript"></script>
-    <script src="/js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap-modal.js" type="text/javascript"></script>
 </body>
 </html>

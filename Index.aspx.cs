@@ -9,10 +9,10 @@ using System.Text;
 
 public partial class Index : System.Web.UI.Page
 {
-    
-   private HttpCookie cookie;
-   private DBConnect db;
-   private string pass;
+
+    private HttpCookie cookie;
+    private DBConnect db;
+    private string pass;
     protected void Page_Load(object sender, EventArgs e)
     {
         initMain();
@@ -27,7 +27,7 @@ public partial class Index : System.Web.UI.Page
     {
         db = new DBConnect();
         fillDate();
-       
+
     }
     protected void fillDate()
     {
@@ -54,7 +54,7 @@ public partial class Index : System.Web.UI.Page
             Session["UserEmail"] = email.Text.ToLowerInvariant();
             Session.Timeout = 40;
             Response.Redirect("newsfeed.aspx");
-            
+
         }
         else email.Text = "nope";
     }
@@ -67,8 +67,8 @@ public partial class Index : System.Web.UI.Page
         string sql = "'" + name.Text + "','" + lstname.Text +
          "','" + mail.Text + "','" + pass +
          "','" + gender + "','" + bdate +
-         "', 'false','"+ crated + "'" ;
-        if (db.getUser(mail.Text,pass))
+         "', 'false','" + crated + "'";
+        if (db.getUser(mail.Text, pass))
         {
             Response.Write("<script type='text/javascript'>alert('already exists')</script>");
         }
@@ -79,7 +79,7 @@ public partial class Index : System.Web.UI.Page
     }
     protected void remember_CheckedChanged(object sender, EventArgs e)
     {
-        
+
     }
     #endregion
 }
