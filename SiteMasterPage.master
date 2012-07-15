@@ -54,7 +54,7 @@
                                     runat="server" Text="Nombre" />
                                 <ul class="dropdown-menu">
                                     <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/newsfeed.aspx" runat="server"><i class="icon-home"></i>Home</asp:HyperLink></li>
-                                    <li><asp:HyperLink ID="profile" NavigateUrl="~/profile.aspx" runat="server"><i class="icon-user"></i>Mi perfil</asp:HyperLink></li>
+                                    <li><asp:HyperLink ID="profile" runat="server"><i class="icon-home"></i><i class="icon-user"></i>Mi perfil</asp:HyperLink></li>
                                     <li class="divider"></li>
                                     <li><asp:HyperLink ID="edit_profile" NavigateUrl="~/profilemodification.aspx" runat="server"><i class="icon-wrench"></i>Modificar perfil</asp:HyperLink> </li>
                                     <li><asp:LinkButton ID="logout" OnClick="logout_Click" runat="server"><i class="icon-remove"></i>Salir</asp:LinkButton></li>

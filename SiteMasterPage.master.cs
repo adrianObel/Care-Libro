@@ -14,13 +14,14 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         initSes();
+        initStruct();
     }
     protected void initSes()
     {
         if (Session["UserEmail"] != null)
         {
-            userData = db.query("SELECT * FROM user WHERE email = '" + Session["UserEmail"].ToString() + "'");
-            initStruct();
+            userData = db.query("SELECT * FROM user LEFT JOIN profile ON user.user_id = "+
+                "profile.user_id AND user.email = '" + Session["UserEmail"].ToString() + "'");
         }
         else
             Response.Redirect("Index.aspx");
@@ -28,8 +29,11 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     protected void initStruct()
     {
         dropdown_menu_button.Text = userData.Rows[0]["name"].ToString() + " " 
-                      + userData.Rows[0]["lastname"].ToString();
+                      + userData.Rows[0]["created_at"].ToString();
+
+        profile.NavigateUrl = "profile.aspx?user=0";
     }
+  
     protected void logout_Click(object sender,EventArgs e)
     {
         Session.Abandon();
