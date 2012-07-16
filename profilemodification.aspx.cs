@@ -107,8 +107,8 @@ public partial class _Default : System.Web.UI.Page
                     {
                         string filename = Path.GetFileName(FileUploadControl.FileName);
                         FileUploadControl.SaveAs(Server.MapPath("~/upimage/") + filename);
-                        db.insert("INSERT INTO photos(user_id,file_name,title) VALUES('"+profileData.Rows[0]["user_id"].ToString()+
-                            "','"+FileUploadControl.FileName+"','')");
+                        db.insert(String.Format("UPDATE profile_photo SET file_name = '{0}' WHERE user_id = '{1}'"
+                           ,FileUploadControl.FileName.ToString(),profileData.Rows[0]["user_id"].ToString()));
                         StatusLabel.ForeColor = System.Drawing.ColorTranslator.FromHtml("#32CD32");
                         StatusLabel.Text = "Estatus de la subida: ¡Archivo subido!";
                     }

@@ -18,9 +18,9 @@ public partial class _Default : System.Web.UI.Page
             db = new DBConnect();
             userid = Request["user"].ToString(); ;
             profileData = db.query(String.Format("SELECT user.user_id,user.name,user.lastname,user.gender "+
-           " ,user.online,profile.url,profile.relationship,profile.looking_for,photos.file_name"+
-            " FROM user LEFT JOIN profile ON (user.user_id = profile.user_id) LEFT JOIN photos"+
-            " ON (photos.user_id = user.user_id) WHERE profile.url= '{0}' ",userid));
+           " ,user.online,profile.url,profile.relationship,profile.looking_for,profile_photo.file_name"+
+            " FROM user LEFT JOIN profile ON (user.user_id = profile.user_id) LEFT JOIN profile_photo"+
+            " ON (profile_photo.user_id = user.user_id) WHERE profile.url= '{0}' ",userid));
             if(profileData.Rows.Count == 0 )
                 Response.Redirect("newsfeed.aspx");
             else

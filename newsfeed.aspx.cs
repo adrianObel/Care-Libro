@@ -44,6 +44,8 @@ public partial class _Default : System.Web.UI.Page
           "education,hobbies,fav_movies,fav_artists,fav_books,fav_animals) VALUES('" + 
           userData.Rows[0]["user_id"].ToString()+ "','"+profile_url+"','','',''," +
           "'','','','','','','','')");
+        db.insert(String.Format("INSERT INTO profile_photo(user_id,file_name) VALUES('{0}','{1}')",userData.Rows[0]["user_id"].ToString()
+            ,"default.png"));
     }
 
 }
