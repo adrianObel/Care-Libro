@@ -17,6 +17,7 @@ public partial class _Default : System.Web.UI.Page
     private string user_browsing_name;
     protected void Page_Load(object sender, EventArgs e)
     {
+        
         if (Session["UserEmail"] != null)
         {
             db = new DBConnect();
@@ -107,10 +108,10 @@ public partial class _Default : System.Web.UI.Page
     protected void send_message_Click(object sender, EventArgs e)
     {
         string time_sent = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
-        db.insert(string.Format("INSERT INTO user_publication(user_id,made_by,message,created_at) VALUES"+
-            "('{0}','{1}','{2}','{3}')",user_browsing_dt.Rows[0]["user_id"].ToString()
-            ,user_browsing_name,write_wall.Text,time_sent));
-       
+        db.insert(string.Format("INSERT INTO user_publication(user_id,made_by,message,created_at) VALUES" +
+            "('{0}','{1}','{2}','{3}')", profileData.Rows[0]["user_id"].ToString()
+            , user_browsing_name, write_wall.Text, time_sent));
+        
     }
 
 }
