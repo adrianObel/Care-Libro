@@ -11,8 +11,8 @@
     <asp:Label ID="looking_for_label" runat="server" Text="Estoy Buscando: "></asp:Label>
     <asp:Label ID="looking_for" runat="server" Text="Buscando"></asp:Label><br />
     <br />
-    <button class="btn btn-primary menubutton" data-toggle="modal" href="#modal-registro">
-        Mas...</button>
+    <asp:Button ID="more_info" class="btn btn-primary menubutton" data-toggle="modal" 
+        href="#modal-registro" runat="server" Text="Mas.."  />
     <hr />
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
@@ -113,7 +113,8 @@
         <asp:TextBox ID="write_wall" runat="server" TextMode="MultiLine" placeholder="¿Que quieres decir?"
             Height="60px" Width="835px"></asp:TextBox>
         <p>
-            <a class="btn btn-primary btn-large">Enviar &raquo;</a></p>
+            <asp:LinkButton ID="send_message" OnClick="send_message_Click" class="btn btn-primary btn-large" runat="server">Enviar&raquo;</asp:LinkButton>
+         </p>
     </div>
     <div class="well">
         <h2>

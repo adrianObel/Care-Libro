@@ -25,6 +25,7 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void initSes()    
     {
+
         userData = db.query("SELECT * FROM user LEFT OUTER JOIN profile ON " +
             "(user.user_id = profile.user_id) WHERE  user.email = "+
             "'" + Session["UserEmail"].ToString() +"'  ");
@@ -32,7 +33,7 @@ public partial class _Default : System.Web.UI.Page
         {
             createProfile();
         }
-        else TextBox1.Text = "wadafak";// userData.Rows[0]["url"].ToString();
+
     }
     protected void createProfile()
     {

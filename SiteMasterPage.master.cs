@@ -31,7 +31,7 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
         dropdown_menu_button.Text = userData.Rows[0]["name"].ToString() + " " 
                       + userData.Rows[0]["lastname"].ToString();
 
-        profile.NavigateUrl = "profile.aspx?user= "+userData.Rows[0]["url"].ToString();;
+        profile.NavigateUrl = String.Format("profile.aspx?user={0} ", userData.Rows[0]["url"].ToString());
     }
   
     protected void logout_Click(object sender,EventArgs e)

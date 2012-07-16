@@ -107,6 +107,8 @@ public partial class _Default : System.Web.UI.Page
                     {
                         string filename = Path.GetFileName(FileUploadControl.FileName);
                         FileUploadControl.SaveAs(Server.MapPath("~/upimage/") + filename);
+                        db.insert("INSERT INTO photos(user_id,file_name,title) VALUES('"+profileData.Rows[0]["user_id"].ToString()+
+                            "','"+FileUploadControl.FileName+"','')");
                         StatusLabel.Text = "Estatus de la subida: ¡Archivo subido!";
                     }
                     else
