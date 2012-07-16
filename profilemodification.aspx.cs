@@ -107,7 +107,7 @@ public partial class _Default : System.Web.UI.Page
            "'','','','','','','','')");
 
     }
-    
+
     protected void UploadButton_Click(object sender, EventArgs e)
     {
         if (FileUploadControl.HasFile)
@@ -120,6 +120,7 @@ public partial class _Default : System.Web.UI.Page
                     {
                         string filename = Path.GetFileName(FileUploadControl.FileName);
                         FileUploadControl.SaveAs(Server.MapPath("~/upimage/") + filename);
+                        StatusLabel.ForeColor = System.Drawing.ColorTranslator.FromHtml("#32CD32");
                         StatusLabel.Text = "Estatus de la subida: ¡Archivo subido!";
                     }
                     else

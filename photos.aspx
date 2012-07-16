@@ -4,15 +4,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
-        <li><a href="#">Noticias</a></li>
-        <li><a href="#">Amigos</a></li>
-        <li class="active"><a href="#">Fotos</a></li>
+        <li>
+            <asp:HyperLink ID="news" NavigateUrl="~/newsfeed.aspx" runat="server">Noticias</asp:HyperLink></li>
+        <li>
+            <asp:HyperLink ID="friends" NavigateUrl="~/friends.aspx" runat="server">Amigos</asp:HyperLink></li>
+        <li class="active">
+            <asp:HyperLink ID="photos" NavigateUrl="~/photos.aspx" runat="server">Fotos</asp:HyperLink></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
         <h1>
-            Fotos de @nombre</h1>
+            Estas son tus fotos</h1>
+        <h3>
+            Sube tus fotos desde aqui:
+        </h3>
+        <asp:FileUpload ID="FileUploadControl" runat="server" />
+        <asp:Button runat="server" ID="UploadButton" class="btn btn-primary" Text="Subir"
+            OnClick="UploadButton_Click" />
+        <br />
+        <br />
+        <asp:Label runat="server" ID="StatusLabel" Text="" ForeColor="Red" />
     </div>
     <asp:Panel ID="Panel1" class="well" runat="server">
         <div class="row">
@@ -74,7 +86,7 @@
         <div class="modal-header">
             <a class="close" data-dismiss="modal">×</a>
             <h3>
-                Fotos de @nombre</h3>
+                Fotos</h3>
         </div>
         <div class="modal-body form-horizontal">
             <div id="photoCarousel" class="carousel slide">
