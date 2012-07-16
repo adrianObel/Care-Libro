@@ -93,8 +93,8 @@ public partial class _Default : System.Web.UI.Page
         }
         return 0;
     }
-
     
+
     protected void UploadButton_Click(object sender, EventArgs e)
     {
         if (FileUploadControl.HasFile)
@@ -109,6 +109,7 @@ public partial class _Default : System.Web.UI.Page
                         FileUploadControl.SaveAs(Server.MapPath("~/upimage/") + filename);
                         db.insert("INSERT INTO photos(user_id,file_name,title) VALUES('"+profileData.Rows[0]["user_id"].ToString()+
                             "','"+FileUploadControl.FileName+"','')");
+                        StatusLabel.ForeColor = System.Drawing.ColorTranslator.FromHtml("#32CD32");
                         StatusLabel.Text = "Estatus de la subida: ¡Archivo subido!";
                     }
                     else

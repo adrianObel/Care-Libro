@@ -53,12 +53,14 @@
                                 <asp:Button ID="dropdown_menu_button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                                     runat="server" Text="Nombre" />
                                 <ul class="dropdown-menu">
-                                    <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/newsfeed.aspx" runat="server"><i class="icon-home"></i>Home</asp:HyperLink></li>
+                                    <li><asp:HyperLink ID="newsfeed" NavigateUrl="~/newsfeed.aspx" runat="server"><i class="icon-home"></i>Home</asp:HyperLink></li>
                                     <li><asp:HyperLink ID="profile" runat="server"><i class="icon-home"></i><i class="icon-user"></i>Mi perfil</asp:HyperLink></li>
                                     <li class="divider"></li>
-                                    <li><asp:HyperLink ID="edit_profile" NavigateUrl="~/profilemodification.aspx" runat="server"><i class="icon-wrench"></i>Modificar perfil</asp:HyperLink> </li>
-                                    <li><asp:LinkButton ID="logout" OnClick="logout_Click" runat="server"><i class="icon-remove"></i>Salir</asp:LinkButton></li>
-
+                                    <li>
+                                        <asp:HyperLink ID="edit_profile" NavigateUrl="~/profilemodification.aspx" runat="server"><i class="icon-wrench"></i>Modificar perfil</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="logout" OnClick="logout_Click" runat="server"><i class="icon-remove"></i>Salir</asp:LinkButton></li>
                                 </ul>
                             </div>
                         </ul>
@@ -71,15 +73,10 @@
                 <div class="span3">
                     <div class="well sidebar-nav" style="position: fixed; width: 300px;">
                         <asp:ContentPlaceHolder ID="sidebar" runat="server">
-                        
-                            
-                            
-                        </ul>
+                            </ul>
                         </asp:ContentPlaceHolder>
                     </div>
-                    <!--/.well -->
                 </div>
-                <!--/span-->
                 <div class="span9">
                     <asp:ContentPlaceHolder ID="middle" runat="server">
                     </asp:ContentPlaceHolder>

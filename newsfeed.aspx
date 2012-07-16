@@ -3,10 +3,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
     <ul class="nav nav-list">
-    <li class="nav-header">Menú</li>
-    <li class="active"><a href="#">Noticias</a></li>
-    <li><a href="#">Amigos</a></li>
-    <li><a href="#">Fotos</a></li>
+        <li class="nav-header">Menú</li>
+        <li class="active">
+            <asp:HyperLink ID="news" NavigateUrl="~/newsfeed.aspx" runat="server">Noticias</asp:HyperLink></li>
+        <li>
+            <asp:HyperLink ID="friends" NavigateUrl="~/friends.aspx" runat="server">Amigos</asp:HyperLink></li>
+        <li>
+            <asp:HyperLink ID="photos" NavigateUrl="~/photos.aspx" runat="server">Fotos</asp:HyperLink></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
