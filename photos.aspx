@@ -27,60 +27,42 @@
         <asp:Label runat="server" ID="StatusLabel" Text="" ForeColor="Red" />
     </div>
     <asp:Panel ID="Panel1" class="well" runat="server">
-        <div class="row">
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo1" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo2" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo3" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo4" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo5" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo6" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo7" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo8" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo9" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo10" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo11" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a data-toggle="modal" href="#modal-photo">
-                    <asp:Image ID="photo12" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-        </div>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo1" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo2" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo3" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo4" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo5" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo6" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo7" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo8" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo9" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo10" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo11" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo12" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo13" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo14" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo15" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo16" Width="96px" Height="95px" runat="server" /></a>
+        <a data-toggle="modal" href="#modal-photo">
+            <asp:Image ID="photo17" Width="96px" Height="95px" runat="server" /></a> <a data-toggle="modal"
+                href="#modal-photo">
+                <asp:Image ID="photo18" Width="96px" Height="95px" runat="server" /></a>
     </asp:Panel>
     <div id="modal-photo" class="modal fade" style="display: none;">
         <div class="modal-header">

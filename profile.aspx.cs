@@ -40,6 +40,15 @@ public partial class _Default : System.Web.UI.Page
         }
         else
             Response.Redirect("Index.aspx");
+
+        friendprof1.ToolTip = "@nombre del amigo";
+        friendprof2.ToolTip = "@nombre del amigo";
+        friendprof3.ToolTip = "@nombre del amigo";
+        friendprof4.ToolTip = "@nombre del amigo";
+        friendprof5.ToolTip = "@nombre del amigo";
+        friendprof6.ToolTip = "@nombre del amigo";
+        friendprof7.ToolTip = "@nombre del amigo";
+        friendprof8.ToolTip = "@nombre del amigo";
        
     }
 

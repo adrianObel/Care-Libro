@@ -21,59 +21,32 @@
             Puedes conectarte con ellos dando click sobre su foto de perfil. ¡Intentalo!</p>
     </div>
     <asp:Panel ID="Panel1" class="well" runat="server">
-        <div class="row">
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend1" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend2" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend3" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend4" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend5" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend6" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend7" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend8" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend9" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend10" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend11" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-            <div class="span3">
-                <a href="#">
-                    <asp:Image ID="friend12" Width="96px" Height="95px" runat="server" /></a>
-            </div>
-        </div>
+        <a href="#">
+            <asp:Image ID="friend1" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend2" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend3" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend4" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend5" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend6" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend7" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend8" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend9" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend10" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend11" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend12" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend13" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend14" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend15" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend16" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friend17" Width="96px" Height="95px" runat="server" /></a> <a href="#">
+                <asp:Image ID="friend18" Width="96px" Height="95px" runat="server" /></a>
     </asp:Panel>
 </asp:Content>
