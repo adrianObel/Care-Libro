@@ -35,9 +35,15 @@
     margin-left:115px;
     
 }
+
 .profileImage
 {
     margin-left:69px;
+}
+
+ul
+{
+    list-style-type:none;
 }
 
 .savebutton

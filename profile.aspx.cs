@@ -5,26 +5,39 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.UI.HtmlControls;
 public partial class _Default : System.Web.UI.Page
 {
     DBConnect db;
-    DataTable profileData;
-    DataTable more_info_table;
-    private string userid;
+    private DataTable profileData;
+    private DataTable more_info_table;
+    private DataTable user_browsing_dt;
+    private DataTable user_publications;
+    private string user_id;
+    private string user_browsing_name;
     protected void Page_Load(object sender, EventArgs e)
     {
+        
         if (Session["UserEmail"] != null)
         {
             db = new DBConnect();
-            userid = Request["user"].ToString(); ;
+            user_id = Request["user"].ToString();
+
+            //Variables to store Current Browser's name,last name 
+            user_browsing_dt = db.query(String.Format("SELECT user_id,name,lastname FROM user WHERE user.email = '{0}'"
+                , Session["UserEmail"].ToString()));
+            user_browsing_name = String.Format("{0} {1}", user_browsing_dt.Rows[0]["name"].ToString()
+            , user_browsing_dt.Rows[0]["lastname"].ToString());
+            //Dataset Storing all Proflie's data
             profileData = db.query(String.Format("SELECT user.user_id,user.name,user.lastname,user.gender "+
            " ,user.online,profile.url,profile.relationship,profile.looking_for,profile_photo.file_name"+
             " FROM user LEFT JOIN profile ON (user.user_id = profile.user_id) LEFT JOIN profile_photo"+
-            " ON (profile_photo.user_id = user.user_id) WHERE profile.url= '{0}' ",userid));
+            " ON (profile_photo.user_id = user.user_id) WHERE profile.url= '{0}' ",user_id));
             if(profileData.Rows.Count == 0 )
                 Response.Redirect("newsfeed.aspx");
             else
                 initProfile();
+            getPublications();
         }
         else
             Response.Redirect("Index.aspx");
@@ -40,6 +53,10 @@ public partial class _Default : System.Web.UI.Page
        
     }
 
+    ///<sumary>
+    ///Method Initializing Proflie Data
+    ///Profile Avatar, Name, Last name etc.
+    ///</sumary>
     protected void initProfile()
     {
         string profile_pic_url = profileData.Rows[0]["file_name"].ToString();
@@ -63,10 +80,38 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-
+    /// <summary>
+    ///Method that retrieves publications
+    ///Then inserting these into placeholder 
+    /// </summary>
+    protected void getPublications()
+    {
+        user_publications = db.query(String.Format("SELECT user_id,made_by,message,created_at "+
+        "FROM `user_publication` WHERE user_publication.user_id = '{0}' ORDER BY created_at DESC LIMIT 10",profileData.Rows[0]["user_id"].ToString()));
+        HtmlGenericControl[] div = new HtmlGenericControl[user_publications.Rows.Count];
+        for (int i = 0; i < div.Length; i++)
+        {
+            div[i] = new HtmlGenericControl("li") { ID = "publication"+i };
+            div[i].InnerHtml = String.Format("<div class='well'><h2>{0}</h2><p>{1}</p> " +
+             "<p>{2}</p></div>", user_publications.Rows[i]["made_by"].ToString()
+             ,user_publications.Rows[i]["created_at"].ToString(),user_publications.Rows[i]["message"].ToString());
+            publish_panel.Controls.Add(div[i]);
+        }
+        
+    }
+   
+    /// <summary>
+    /// Method in charge of sending publication into database
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void send_message_Click(object sender, EventArgs e)
     {
-       
+        string time_sent = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+        db.insert(string.Format("INSERT INTO user_publication(user_id,made_by,message,created_at) VALUES" +
+            "('{0}','{1}','{2}','{3}')", profileData.Rows[0]["user_id"].ToString()
+            , user_browsing_name, write_wall.Text, time_sent));
+        
     }
 
 }

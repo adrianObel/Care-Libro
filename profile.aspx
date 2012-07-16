@@ -141,10 +141,8 @@
     <div class="well">
         <h2>
             Noticias del muro over here :D</h2>
-        <p>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        </p>
+            <ul class="publish_list">
+        <asp:PlaceHolder ID="publish_panel" runat="server"></asp:PlaceHolder>
+            </ul>
     </div>
 </asp:Content>
