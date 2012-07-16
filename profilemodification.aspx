@@ -14,9 +14,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
         <h1>
-            Cambie sus datos de perfil aqui:</h1><br />
-        <asp:Label ID="successlabel" runat="server" Text="Sus cambios han sido guardados." ForeColor="#00CC00" Visible="False" Font-Size="Large" ViewStateMode="Inherit"></asp:Label>
-        <asp:Label ID="cancellabel" runat="server" Text="Sus cambios NO han sido guardados." ForeColor="Red" Font-Size="Large" Visible="False"></asp:Label>
+            Cambie sus datos de perfil aqui:</h1>
+        <br />
+        <asp:Label ID="successlabel" runat="server" Text="Sus cambios han sido guardados."
+            ForeColor="#00CC00" Visible="False" Font-Size="Large" ViewStateMode="Inherit"></asp:Label>
+        <asp:Label ID="cancellabel" runat="server" Text="Sus cambios NO han sido guardados."
+            ForeColor="Red" Font-Size="Large" Visible="False"></asp:Label>
     </div>
     <div class="row-fluid">
         <div class="span12">
@@ -93,8 +96,7 @@
             <br />
             </section>
         </div>
-        <button class="btn btn-primary btn-large savebutton" data-toggle="modal"
-        href="#modal-modification">
+        <button class="btn btn-primary btn-large savebutton" data-toggle="modal" href="#modal-modification">
             Guardar</button>
         <div id="modal-modification" class="modal fade" style="display: none;">
             <div class="modal-header">
@@ -108,10 +110,9 @@
                 <br />
                 <center>
                     <asp:Button ID="save_modifications" OnClick="save_modifications_Click" class="btn btn-primary btn-large"
-                         runat="server" Text="Guardar" />
-                    <asp:Button class="btn btn-danger btn-large"
-                        ID="cancel_modifications" href="#" OnClick="cancel_modifications_Click" runat="server"
-                        Text="Cancelar" PostBackUrl="~/profilemodification.aspx" /></center>
+                        runat="server" Text="Guardar" />
+                    <asp:Button class="btn btn-danger btn-large" ID="cancel_modifications" href="#" OnClick="cancel_modifications_Click"
+                        runat="server" Text="Cancelar" PostBackUrl="~/profilemodification.aspx" /></center>
             </div>
         </div>
     </div>

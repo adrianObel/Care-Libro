@@ -109,26 +109,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
-        <div class="row">
-            <div class="span2">
-                <a href="#">
-                    <asp:Image ID="friendprof1" Width="96px" Height="95px" runat="server" /></a></div>
-            <div class="span2">
-                <a href="#">
-                    <asp:Image ID="friendprof2" Width="96px" Height="95px" runat="server" /></a></div>
-            <div class="span2">
-                <a href="#">
-                    <asp:Image ID="friendprof3" Width="96px" Height="95px" runat="server" /></a></div>
-            <div class="span2">
-                <a href="#">
-                    <asp:Image ID="friendprof4" Width="96px" Height="95px" runat="server" /></a></div>
-            <div class="span2">
-                <a href="#">
-                    <asp:Image ID="friendprof5" Width="96px" Height="95px" runat="server" /></a></div>
-            <div class="span2">
-                <a href="#">
-                    <asp:Image ID="friendprof6" Width="96px" Height="95px" runat="server" /></a></div>
-        </div>
+        <a href="#">
+            <asp:Image ID="friendprof1" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friendprof2" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friendprof3" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friendprof4" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friendprof5" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friendprof6" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friendprof7" Width="96px" Height="95px" runat="server" /></a>
+        <a href="#">
+            <asp:Image ID="friendprof8" Width="96px" Height="95px" runat="server" /></a><br />
+        <br />
         <h1>
             Escribe algo...
         </h1>
