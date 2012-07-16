@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.UI.HtmlControls;
 public partial class _Default : System.Web.UI.Page
 {
     DBConnect db;
     DataTable profileData;
     DataTable more_info_table;
+    DataTable user_publications;
     private string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,6 +27,7 @@ public partial class _Default : System.Web.UI.Page
                 Response.Redirect("newsfeed.aspx");
             else
                 initProfile();
+            getPublications();
         }
         else
             Response.Redirect("Index.aspx");
@@ -54,7 +57,20 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-
+    protected void getPublications()
+    {
+       
+        HtmlGenericControl[] div = new HtmlGenericControl[5];
+        div[0] = new HtmlGenericControl("li") { ID = "publication" };
+        div[0].InnerHtml = String.Format("<div class='well'><h2>{0}</h2> "+
+        "<p>test</p></div>",Session["UserEmail"].ToString());
+        div[1] = new HtmlGenericControl("li") { ID = "publication" };
+        div[1].InnerHtml = String.Format("<div class='well'><h2>{0}</h2> " +
+        "<p>test</p></div>", Session["UserEmail"].ToString());
+        publish_panel.Controls.Add(div[0]);
+        publish_panel.Controls.Add(div[1]);
+        
+    }
     protected void send_message_Click(object sender, EventArgs e)
     {
        

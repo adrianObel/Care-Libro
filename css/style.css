@@ -35,17 +35,13 @@
     margin-left:115px;
     
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 .profileImage
 {
     margin-left:69px;
 }
->>>>>>> d3b8e73c6b4db3f4738fd3117543fcd852afcd61
-=======
-.profileImage
+
+ul
 {
-    margin-left:69px;
+    list-style-type:none;
 }
->>>>>>> d3b8e73c6b4db3f4738fd3117543fcd852afcd61
