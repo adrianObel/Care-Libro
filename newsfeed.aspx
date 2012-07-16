@@ -3,13 +3,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
     <ul class="nav nav-list">
-        <li class="nav-header">Menú</li>
-        <li class="active">
-            <asp:HyperLink ID="news" NavigateUrl="~/newsfeed.aspx" runat="server">Noticias</asp:HyperLink></li>
-        <li>
-            <asp:HyperLink ID="friends" NavigateUrl="~/friends.aspx" runat="server">Amigos</asp:HyperLink></li>
-        <li>
-            <asp:HyperLink ID="photos" NavigateUrl="~/photos.aspx" runat="server">Fotos</asp:HyperLink></li>
+    <li class="nav-header">Menú</li>
+    <li class="active"><a href="#">Noticias</a></li>
+    <li><a href="#">Amigos</a></li>
+    <li><a href="#">Fotos</a></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
@@ -20,7 +17,7 @@
         <p>
             Desde aqui puedes ver lo que hacen tus amigos, sus fotos, sus comentarios... ¡Ademas
             de poder escribir tus propios pensamientos! Intentalo escribiendo aqui:</p>
-        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" placeholder="¿Que estas pensando?"
+        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" pacleholder="¿Que estas pensando?"
             Height="60px" Width="835px"></asp:TextBox>
         <p>
             <a class="btn btn-primary btn-large">Enviar &raquo;</a></p>
