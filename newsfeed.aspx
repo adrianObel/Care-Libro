@@ -2,7 +2,7 @@
     CodeFile="newsfeed.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
-  <ul class="nav nav-list">
+    <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
         <li class="active">
             <asp:HyperLink ID="news" NavigateUrl="~/newsfeed.aspx" runat="server">Noticias</asp:HyperLink></li>

@@ -13,6 +13,9 @@ public class DBConnect
     private MySqlCommand cmd;
     private DataTable dt;
 
+    /// <summary>
+    /// Initialize Connection with Care-Libro Database
+    /// </summary>
 	public DBConnect()
 	{
         cn = new MySqlConnection("server=localhost; user id=root; password=; database=care-libro;");
@@ -42,6 +45,11 @@ public class DBConnect
             return false;
         }
     }
+    /// <summary>
+    /// Method in charge of all queries to database
+    /// </summary>
+    /// <param name="sql"></param>
+    /// <returns>DataTable</returns>
     public DataTable query(string sql)
     {
         da = new MySqlDataAdapter(sql, cn);
@@ -49,6 +57,10 @@ public class DBConnect
         da.Fill(dt);
         return dt;
     }
+    /// <summary>
+    /// method in charge of all insertion to database
+    /// </summary>
+    /// <param name="sql"></param>
     public void insert(string sql)
     {
         cmd = new MySqlCommand(sql, cn);
@@ -59,7 +71,12 @@ public class DBConnect
         }
     }
 
-    //Method to retrieve user details and validate to see if exist
+    /// <summary>
+    /// Method to retrieve user details and validate to see if exist
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="pass"></param>
+    /// <returns>boolean</returns>
     public bool getUser(string id,string pass)
     {
             dt = query("SELECT * FROM user WHERE email ='" + id + "' AND password = '" + pass + "' ");

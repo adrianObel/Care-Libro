@@ -2,28 +2,46 @@
     CodeFile="profile.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
-    <asp:Image ID="profilepic" runat="server" Width="150px" Height="150px" /><br />
-    <button id="add_friend" class="btn btn-success btn-large friendbutton">
-        Agregar como amigo</button><br /><br />
+    <asp:Image ID="profilepic" class="profileImage" runat="server" Width="150px" Height="150px" /><br />
+    <button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
+        href="#modal-add">
+        Agregar como amigo</button><br />
+    <br />
     <asp:Label ID="name" runat="server" Text="Nombre"></asp:Label><br />
     <asp:Label ID="relationship_label" runat="server" Text="Relacion: "></asp:Label>
     <asp:Label ID="relationship" runat="server" Text="Relacion"></asp:Label><br />
     <asp:Label ID="looking_for_label" runat="server" Text="Estoy Buscando: "></asp:Label>
     <asp:Label ID="looking_for" runat="server" Text="Buscando"></asp:Label><br />
     <br />
-    <asp:Button ID="more_info" class="btn btn-primary menubutton" data-toggle="modal" 
-        href="#modal-registro" runat="server" Text="Mas.."  />
+    <asp:Button ID="more_info" class="btn btn-primary menubutton" data-toggle="modal"
+        href="#modal-more" runat="server" Text="Mas.." />
     <hr />
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
         <li><a href="#">Amigos</a></li>
         <li><a href="#">Fotos</a></li>
     </ul>
-    <div id="modal-registro" class="modal fade" style="display: none;">
+    <div id="modal-add" class="modal fade" style="display: none;">
         <div class="modal-header">
             <a class="close" data-dismiss="modal">×</a>
             <h3>
-                Mas informacion sobre "nombre"</h3>
+                ¿Seguro?</h3>
+        </div>
+        <div class="modal-body form-horizontal">
+            <h1>
+                ¿Estas seguro que deseas agregar a @nombre a tus amigos?</h1>
+            <br />
+            <center>
+                <asp:Button ID="add" class="btn btn-primary btn-large" runat="server" Text="Si, añadir" />
+                <asp:Button ID="dontadd" class="btn btn-danger btn-large" runat="server" data-dismiss="modal"
+                    Text="No" /></center>
+        </div>
+    </div>
+    <div id="modal-more" class="modal fade" style="display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>
+                Mas informacion sobre @nombre</h3>
         </div>
         <div class="modal-body form-horizontal">
             <div class="control-group">
@@ -113,8 +131,9 @@
         <asp:TextBox ID="write_wall" runat="server" TextMode="MultiLine" placeholder="¿Que quieres decir?"
             Height="60px" Width="835px"></asp:TextBox>
         <p>
-            <asp:LinkButton ID="send_message" OnClick="send_message_Click" class="btn btn-primary btn-large" runat="server">Enviar&raquo;</asp:LinkButton>
-         </p>
+            <asp:LinkButton ID="send_message" OnClick="send_message_Click" class="btn btn-primary btn-large"
+                runat="server">Enviar&raquo;</asp:LinkButton>
+        </p>
     </div>
     <div class="well">
         <h2>
