@@ -9,8 +9,6 @@ using System.Text;
 
 public partial class Index : System.Web.UI.Page
 {
-
-    private HttpCookie cookie;
     private DBConnect db;
     private string pass;
     protected void Page_Load(object sender, EventArgs e)
@@ -79,6 +77,7 @@ public partial class Index : System.Web.UI.Page
     }
     protected void remember_CheckedChanged(object sender, EventArgs e)
     {
+        
 
     }
     #endregion
