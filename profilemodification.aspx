@@ -14,7 +14,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
         <h1>
-            Cambie sus datos de perfil aqui:</h1>
+            Cambie sus datos de perfil aqui:</h1><br />
+        <asp:Label ID="successlabel" runat="server" Text="Sus cambios han sido guardados." ForeColor="#00CC00" Visible="False" Font-Size="Large" ViewStateMode="Inherit"></asp:Label>
+        <asp:Label ID="cancellabel" runat="server" Text="Sus cambios NO han sido guardados." ForeColor="Red" Font-Size="Large" Visible="False"></asp:Label>
     </div>
     <div class="row-fluid">
         <div class="span12">
@@ -107,9 +109,9 @@
                 <center>
                     <asp:Button ID="save_modifications" OnClick="save_modifications_Click" class="btn btn-primary btn-large"
                          runat="server" Text="Guardar" />
-                    <asp:Button class="btn btn-danger btn-large" data-dismiss="modal"
-                        ID="cancel_modifications" runat="server"
-                        Text="Cancelar"/></center>
+                    <asp:Button class="btn btn-danger btn-large"
+                        ID="cancel_modifications" href="#" OnClick="cancel_modifications_Click" runat="server"
+                        Text="Cancelar" PostBackUrl="~/profilemodification.aspx" /></center>
             </div>
         </div>
     </div>

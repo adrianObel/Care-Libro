@@ -48,6 +48,8 @@
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                     </a><a class="brand" href="newsfeed.aspx">Care' Libro</a>
                     <div class="nav-collapse">
+                        <asp:TextBox ID="search" class="search-query span2 navbar-search" style="height:18px;" placeholder="Buscar en Care' Libro" runat="server"></asp:TextBox>
+                        <asp:Button ID="search_button" class="btn btn-success btn-mini" runat="server" Text="Buscar" />
                         <ul class="nav pull-right">
                             <div class="btn-group">
                                 <asp:Button ID="dropdown_menu_button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
