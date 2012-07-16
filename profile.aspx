@@ -13,8 +13,8 @@
     <asp:Label ID="looking_for_label" runat="server" Text="Estoy Buscando: "></asp:Label>
     <asp:Label ID="looking_for" runat="server" Text="Buscando"></asp:Label><br />
     <br />
-    <button class="btn btn-primary menubutton" data-toggle="modal" href="#modal-more">
-        Mas...</button>
+    <asp:Button ID="more_info" class="btn btn-primary menubutton" data-toggle="modal"
+        href="#modal-more" runat="server" Text="Mas.." />
     <hr />
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
@@ -29,13 +29,20 @@
         </div>
         <div class="modal-body form-horizontal">
             <h1>
-                ¿Estas seguro que deseas agregar a @nombre a tus amigos?</h1><br />
-                <center>
-            <asp:Button ID="add" class="btn btn-primary btn-large" runat="server" Text="Si, añadir" />
-            <asp:Button ID="dontadd" class="btn btn-danger btn-large" runat="server" data-dismiss="modal" Text="No" /></center>
+                ¿Estas seguro que deseas agregar a @nombre a tus amigos?</h1>
+            <br />
+            <center>
+                <asp:Button ID="add" class="btn btn-primary btn-large" runat="server" Text="Si, añadir" />
+                <asp:Button ID="dontadd" class="btn btn-danger btn-large" runat="server" data-dismiss="modal"
+                    Text="No" /></center>
         </div>
     </div>
     <div id="modal-more" class="modal fade" style="display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>
+                Mas informacion sobre @nombre</h3>
+        </div>
         <div class="modal-body form-horizontal">
             <div class="control-group">
                 <asp:Label ID="about_me_label_modal" runat="server" Text="Sobre mi: " class="control-label"></asp:Label>
@@ -94,9 +101,9 @@
                     <asp:Label ID="favanimals_modal" runat="server" Text="Animales"></asp:Label>
                 </div>
             </div>
-            <div class="modal-footer">
-                <a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
-            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
         </div>
     </div>
 </asp:Content>
@@ -124,7 +131,9 @@
         <asp:TextBox ID="write_wall" runat="server" TextMode="MultiLine" placeholder="¿Que quieres decir?"
             Height="60px" Width="835px"></asp:TextBox>
         <p>
-            <a class="btn btn-primary btn-large">Enviar &raquo;</a></p>
+            <asp:LinkButton ID="send_message" OnClick="send_message_Click" class="btn btn-primary btn-large"
+                runat="server">Enviar&raquo;</asp:LinkButton>
+        </p>
     </div>
     <div class="well">
         <h2>

@@ -11,7 +11,6 @@ public partial class _Default : System.Web.UI.Page
 {
     DBConnect db;
     DataTable profileData;
-    private string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["UserEmail"] != null)
@@ -25,14 +24,11 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void getDetails()
     {
-        userid = db.query("SELECT user_id FROM user WHERE user.email='"+Session["UserEmail"].ToString()+"' ").Rows[0]["user_id"].ToString();
         profileData = db.query("SELECT * FROM user INNER JOIN profile ON user.user_id = profile.user_id" +
             " AND user.email='"+Session["UserEmail"].ToString()+"'" );
     }
     protected void fillDetails()
     {
-        if (profileData.Rows.Count != 0)
-        {
             if (!IsPostBack)
             {
                 about_me.Text = profileData.Rows[0]["about_me"].ToString();
@@ -47,9 +43,6 @@ public partial class _Default : System.Web.UI.Page
                 fav_books.Text = profileData.Rows[0]["fav_books"].ToString();
                 fav_animals.Text = profileData.Rows[0]["fav_animals"].ToString();
             }
-        }
-        else
-            createProfile();
     }
     protected void save_modifications_Click(object sender,EventArgs e)
     {
@@ -57,14 +50,9 @@ public partial class _Default : System.Web.UI.Page
         ", looking_for='"+looking_for.SelectedItem+"',phone = '"+phone.Text+"',interests = '"+interest.Text+"'"+
         ",education = '"+education.Text+"',hobbies = '"+hobbies.Text+"',fav_movies = '"+fav_movies.Text+"'"+
         ",fav_artists = '"+fav_artists.Text+"',fav_books = '"+fav_books.Text+"',fav_animals = '"+fav_animals.Text+"'"+
-        "WHERE user_id = '"+userid+"'");
+        "WHERE user_id = '"+profileData.Rows[0]["user_id"].ToString()+"'");
        }
 
-
-    protected void cancel_modifications_Click(object sender, EventArgs e)
-    {
-        Response.Write("<script type='text/javascript'>alert('"+about_me.Text+"') </script>");
-    }
     protected byte relationStatus()
     {
         switch (profileData.Rows[0]["relationship"].ToString())
@@ -100,14 +88,6 @@ public partial class _Default : System.Web.UI.Page
         }
         return 0;
     }
-    protected void createProfile()
-    {
-        db.insert("INSERT INTO profile(user_id,about_me,relationship,looking_for,phone,interests,"+
-           "education,hobbies,fav_movies,fav_artists,fav_books,fav_animals) VALUES('"+userid+"','','','',"+
-           "'','','','','','','','')");
-
-    }
-
     protected void UploadButton_Click(object sender, EventArgs e)
     {
         if (FileUploadControl.HasFile)
@@ -120,6 +100,8 @@ public partial class _Default : System.Web.UI.Page
                     {
                         string filename = Path.GetFileName(FileUploadControl.FileName);
                         FileUploadControl.SaveAs(Server.MapPath("~/upimage/") + filename);
+                        db.insert(String.Format("UPDATE profile_photo SET file_name = '{0}' WHERE user_id = '{1}'"
+                           ,FileUploadControl.FileName.ToString(),profileData.Rows[0]["user_id"].ToString()));
                         StatusLabel.ForeColor = System.Drawing.ColorTranslator.FromHtml("#32CD32");
                         StatusLabel.Text = "Estatus de la subida: ¡Archivo subido!";
                     }

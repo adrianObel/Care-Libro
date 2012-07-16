@@ -8,15 +8,44 @@ using System.Data;
 
 public partial class _Default : System.Web.UI.Page
 {
-    private DataSet userData;
-    private DBConnect db = new DBConnect();
+    private DataTable userData;
+    private string userid;
+    private DBConnect db;
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        initSes();
+        if (Session["UserEmail"] != null)
+        {
+            db = new DBConnect();
+            initSes();
+        }
+        else
+            Response.Redirect("Index.aspx");
+      
     }
-    protected void initSes()
+    protected void initSes()    
     {
-        
+
+        userData = db.query("SELECT * FROM user LEFT OUTER JOIN profile ON " +
+            "(user.user_id = profile.user_id) WHERE  user.email = "+
+            "'" + Session["UserEmail"].ToString() +"'  ");
+        if (userData.Rows[0]["profile_id"] == DBNull.Value)
+        {
+            createProfile();
+        }
+
     }
+    protected void createProfile()
+    {
+        string profile_url = userData.Rows[0]["name"].ToString() + "." + userData.Rows[0]["lastname"].ToString() +
+            userData.Rows[0]["user_id"].ToString(); 
+
+        db.insert("INSERT INTO profile(user_id,url,about_me,relationship,looking_for,phone,interests," +
+          "education,hobbies,fav_movies,fav_artists,fav_books,fav_animals) VALUES('" + 
+          userData.Rows[0]["user_id"].ToString()+ "','"+profile_url+"','','',''," +
+          "'','','','','','','','')");
+        db.insert(String.Format("INSERT INTO profile_photo(user_id,file_name) VALUES('{0}','{1}')",userData.Rows[0]["user_id"].ToString()
+            ,"default.png"));
+    }
+
 }

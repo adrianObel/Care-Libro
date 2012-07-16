@@ -20,7 +20,7 @@
         <p>
             Desde aqui puedes ver lo que hacen tus amigos, sus fotos, sus comentarios... ¡Ademas
             de poder escribir tus propios pensamientos! Intentalo escribiendo aqui:</p>
-        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" placeholder="¿Que estas pensando?"
+        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" pacleholder="¿Que estas pensando?"
             Height="60px" Width="835px"></asp:TextBox>
         <p>
             <a class="btn btn-primary btn-large">Enviar &raquo;</a></p>

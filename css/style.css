@@ -17,7 +17,7 @@
  */
  
 .modtextfield {
-	width:955px;
+	width:705px;
 	height:100px;
 	margin-left:0px;
 
@@ -39,3 +39,11 @@
 {
     margin-left:69px;
 }
+
+.savebutton
+{
+    margin-left:280px;
+    width:400px;
+    height:50px;    
+}
+
