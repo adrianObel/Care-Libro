@@ -111,17 +111,23 @@
     <div class="hero-unit">
         <div class="row">
             <div class="span2">
-                <asp:Image ID="FriendImage1" runat="server" Width="128px" /></div>
+                <a href="#">
+                    <asp:Image ID="friendprof1" Width="96px" Height="95px" runat="server" /></a></div>
             <div class="span2">
-                <asp:Image ID="FriendImage2" runat="server" Width="128px" /></div>
+                <a href="#">
+                    <asp:Image ID="friendprof2" Width="96px" Height="95px" runat="server" /></a></div>
             <div class="span2">
-                <asp:Image ID="FriendImage3" runat="server" Width="128px" /></div>
+                <a href="#">
+                    <asp:Image ID="friendprof3" Width="96px" Height="95px" runat="server" /></a></div>
             <div class="span2">
-                <asp:Image ID="FriendImage4" runat="server" Width="128px" /></div>
+                <a href="#">
+                    <asp:Image ID="friendprof4" Width="96px" Height="95px" runat="server" /></a></div>
             <div class="span2">
-                <asp:Image ID="FriendImage5" runat="server" Width="128px" /></div>
+                <a href="#">
+                    <asp:Image ID="friendprof5" Width="96px" Height="95px" runat="server" /></a></div>
             <div class="span2">
-                <asp:Image ID="FriendImage6" runat="server" Width="128px" /></div>
+                <a href="#">
+                    <asp:Image ID="friendprof6" Width="96px" Height="95px" runat="server" /></a></div>
         </div>
         <h1>
             Escribe algo...
