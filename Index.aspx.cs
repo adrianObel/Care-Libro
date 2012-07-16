@@ -31,7 +31,7 @@ public partial class Index : System.Web.UI.Page
     {
         for (int i = (DateTime.Now.Year); i > 1950; i--)
             year.Items.Add(Convert.ToString(i));
-        for (int i = 0; i < 31; i++)
+        for (int i = 1; i < 31; i++)
             day.Items.Add(Convert.ToString(i));
         for (int i = 1; i < 13; i++)
             month.Items.Add(Convert.ToString(i));

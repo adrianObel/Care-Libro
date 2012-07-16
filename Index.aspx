@@ -32,93 +32,103 @@
     <title>Care' Libro</title>
 </head>
 <body>
-    <form id="form1" runat="server" class="navbar-form">
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </a>
-                <div class="nav-collapse">
-                    <ul class="nav pull-right">
-                        <asp:TextBox ID="email" runat="server" placeholder="Email"></asp:TextBox>
-                        <asp:TextBox ID="password" runat="server" placeholder="Password" TextMode="Password"
+    <form id="validate_form" runat="server" class="navbar-form">
+    <fieldset>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                        class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </a>
+                    <div class="nav-collapse">
+                        <ul class="nav pull-right">
+                            <asp:TextBox ID="email" runat="server" placeholder="Email"></asp:TextBox>
+                            <asp:TextBox ID="password" runat="server" placeholder="Password" TextMode="Password"
+                                Style="height: 25px; color: Black;"></asp:TextBox>
+                            <asp:CheckBox ID="remember" runat="server" OnCheckedChanged="remember_CheckedChanged" />
+                            <asp:Label ID="Label1" runat="server" Text="Recordar contraseña"></asp:Label>
+                            <asp:Button ID="login" runat="server" Text="Ingresar" class="btn btn-primary" OnClick="login_Click" />
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-registro" class="modal fade" style="display: none;">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>
+                    ¡Awwwww Yeah! ¡Registrate en Care' Libro!</h3>
+            </div>
+            <div class="modal-body form-horizontal">
+                <div class="control-group">
+                    <asp:Label ID="name_modal" runat="server" Text="Nombre" class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:TextBox ID="name" runat="server" class="span3"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Label ID="lstname_modal" runat="server" Text="Apellidos" class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:TextBox ID="lstname" runat="server" class="span3"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Label ID="email_modal" runat="server" Text="Correo Electronico" class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:TextBox ID="mail" runat="server" class="span3"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Label ID="re_email_modal" runat="server" Text="Vuelve a escribir tu correo electronico"
+                        class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:TextBox ID="remail" runat="server" class="span3"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Label ID="pass_modal" runat="server" Text="Contraseña" class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:TextBox ID="password_field" runat="server" class="span3" TextMode="Password"
                             Style="height: 25px; color: Black;"></asp:TextBox>
-                        <asp:CheckBox ID="remember" runat="server" OnCheckedChanged="remember_CheckedChanged" />
-                        <asp:Label ID="Label1" runat="server" Text="Recordar contraseña"></asp:Label>
-                        <asp:Button ID="login" runat="server" Text="Ingresar" class="btn btn-primary" OnClick="login_Click" />
-                    </ul>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Label ID="reppass_modal" runat="server" Text="Repita su contraseña" class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:TextBox ID="repassword_field" runat="server" class="span3" TextMode="Password"
+                            Style="height: 25px; color: Black;"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Label ID="gender_modal" runat="server" Text="Sexo" class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:DropDownList ID="sex" runat="server" class="span2">
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem>Masculino</asp:ListItem>
+                            <asp:ListItem>Femenino</asp:ListItem>
+                            <asp:ListItem>Otro</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Label ID="dob_modal" runat="server" Text="Fecha de nacimiento" class="control-label"></asp:Label>
+                    <div class="controls">
+                        <asp:DropDownList ID="day" placeholder="Dia" runat="server" class="span1">
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="month" runat="server" class="span1">
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="year" runat="server" class="span1">
+                        </asp:DropDownList>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="modal-registro" class="modal fade" style="display: none;">
-        <div class="modal-header">
-            <a class="close" data-dismiss="modal">×</a>
-            <h3>
-                ¡Awwwww Yeah! ¡Registrate en Care' Libro!</h3>
-        </div>
-        <div class="modal-body form-horizontal">
-            <div class="control-group">
-                <asp:Label ID="name_modal" runat="server" Text="Nombre" class="control-label"></asp:Label>
-                <div class="controls">
-                    <asp:TextBox ID="name" runat="server" class="span3"></asp:TextBox>
-                </div>
+            <div class="modal-footer form-actions">
+                <asp:Button ID="register" type="submit" runat="server" class="btn btn-primary" OnClick="register_Click"
+                    Text="Enviar" />
+                <asp:Button ID="closemodal" class="btn btn-danger" data-dismiss="modal" runat="server"
+                    Text="Cerrar" />
             </div>
-            <div class="control-group">
-                <asp:Label ID="lstname_modal" runat="server" Text="Apellidos" class="control-label"></asp:Label>
-                <div class="controls">
-                    <asp:TextBox ID="lstname" runat="server" class="span3"></asp:TextBox>
-                </div>
-            </div>
-            <div class="control-group">
-                <asp:Label ID="email_modal" runat="server" Text="Correo Electronico" class="control-label"></asp:Label>
-                <div class="controls">
-                    <asp:TextBox ID="mail" runat="server" class="span3"></asp:TextBox>
-                </div>
-            </div>
-            <div class="control-group">
-                <asp:Label ID="re_email_modal" runat="server" Text="Vuelve a escribir tu correo electronico"
-                    class="control-label"></asp:Label>
-                <div class="controls">
-                    <asp:TextBox ID="TextBox1" runat="server" class="span3"></asp:TextBox>
-                </div>
-            </div>
-            <div class="control-group">
-                <asp:Label ID="pass_modal" runat="server" Text="Contraseña" class="control-label"></asp:Label>
-                <div class="controls">
-                    <asp:TextBox ID="password_field" runat="server" class="span3" TextMode="Password"
-                        Style="height: 25px; color: Black;"></asp:TextBox>
-                </div>
-            </div>
-            <div class="control-group">
-                <asp:Label ID="gender_modal" runat="server" Text="Sexo" class="control-label"></asp:Label>
-                <div class="controls">
-                    <asp:DropDownList ID="sex" runat="server" class="span2">
-                        <asp:ListItem></asp:ListItem>
-                        <asp:ListItem>Masculino</asp:ListItem>
-                        <asp:ListItem>Femenino</asp:ListItem>
-                        <asp:ListItem>Otro</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-            </div>
-            <div class="control-group">
-                <asp:Label ID="dob_modal" runat="server" Text="Fecha de nacimiento" class="control-label"></asp:Label>
-                <div class="controls">
-                    <asp:DropDownList ID="day" placeholder="Dia" runat="server" class="span1">
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="month" runat="server" class="span1">
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="year" runat="server" class="span1">
-                    </asp:DropDownList>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <asp:LinkButton ID="register" class="btn btn-primary" runat="server" OnClick="register_Click">Register</asp:LinkButton>
-            <a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
-        </div>
-    </div>
+    </fieldset>
     </form>
     <div class="container">
         <div>
@@ -173,5 +183,8 @@
       </footer>
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>
+    <script src="js/bootstrap-transition.js" type="text/javascript"></script>
+    <script src="js/validate.js" type="text/javascript"></script>
 </body>
 </html>
