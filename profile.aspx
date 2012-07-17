@@ -13,8 +13,10 @@
     <br />
     <button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
         href="#modal-add">
-        Agregar como amigo</button><asp:Button ID="more_info" class="btn btn-primary btn-large menubutton" data-toggle="modal"
-        href="#modal-more" runat="server" Text="Mas.." /><br />
+        Agregar como amigo</button><br />
+    <asp:PlaceHolder ID="are_friends" runat="server"></asp:PlaceHolder>
+    <asp:Button ID="more_info" class="btn btn-primary menubutton" data-toggle="modal"
+        href="#modal-more" runat="server" Text="Mas.." />
     <hr />
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
