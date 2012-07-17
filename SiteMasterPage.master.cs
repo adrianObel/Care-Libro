@@ -9,7 +9,7 @@ using System.Data;
 public partial class SiteMasterPage : System.Web.UI.MasterPage
 {
     private DataTable userData;
-    private DBConnect db = new DBConnect();
+    private DBConnect db;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -20,6 +20,7 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     {
         if (Session["UserEmail"] != null)
         {
+            db = new DBConnect();
             userData = db.query("SELECT * FROM user LEFT JOIN profile ON user.user_id = "+
                 "profile.user_id WHERE user.email = '" + Session["UserEmail"].ToString() + "'");
         }
@@ -38,5 +39,9 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     {
         Session.Abandon();
         Response.Redirect("Index.aspx");
+    }
+    protected void search_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("search.aspx?search="+search.Text);
     }
 }

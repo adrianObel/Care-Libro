@@ -64,60 +64,11 @@
             <br />
             <div class="form-horizontal">
                 <asp:TextBox ID="search_box" placeholder="Buscar en Care' Libro" runat="server"></asp:TextBox>
-                <asp:Button ID="search_button" class="btn btn-success btn-large" runat="server" Text="Buscar" />
+                <asp:Button ID="search_button" class="btn btn-success btn-large" OnClick="search_Click" runat="server" Text="Buscar" />
             </div>
         </div>
         <div class="well">
-            <a href="#">
-                <asp:Image ID="person1" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person2" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person3" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person4" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person5" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person6" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person7" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person8" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person9" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person10" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person11" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person12" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person13" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person14" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person15" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person16" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person17" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person18" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person19" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person20" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person21" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person22" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person23" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person24" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person25" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person26" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person27" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person28" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person29" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person30" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person31" Width="96px" Height="95px" runat="server" /></a> <a href="#">
-                    <asp:Image ID="person32" Width="96px" Height="95px" runat="server" /></a>
-            <a href="#">
-                <asp:Image ID="person33" Width="96px" Height="95px" runat="server" /></a>
+            <asp:PlaceHolder ID="search_place_holder" runat="server"></asp:PlaceHolder> 
         </div>
     </div>
     </form>
