@@ -21,6 +21,5 @@
             Puedes conectarte con ellos dando click sobre su foto de perfil. ¡Intentalo!</p>
     </div>
     <asp:Panel ID="follow_list" class="well" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </asp:Panel>
 </asp:Content>

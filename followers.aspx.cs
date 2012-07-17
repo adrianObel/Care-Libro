@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 using System.Data;
 public partial class _Default : System.Web.UI.Page
 {
@@ -36,6 +37,23 @@ public partial class _Default : System.Web.UI.Page
                                          "FROM profile LEFT JOIN follow ON(profile.user_id = follow.follow_id) "+
                                          " LEFT JOIN profile_photo ON(`profile`.user_id = profile_photo.user_id) " +
                                          "WHERE follow.user_id = '{0}'",uid));
-        Label1.Text = flw_det.Rows[0]["file_name"].ToString();
+        if (flw_det.Rows.Count != 0)
+        {
+            int n = flw_det.Rows.Count;
+            HtmlGenericControl[] search_a = new HtmlGenericControl[n];
+            HtmlGenericControl[] search_img = new HtmlGenericControl[n];
+            for (int i = 0; i < n; i++)
+            {
+                search_a[i] = new HtmlGenericControl("a") { ID = "image_link" };
+                search_img[i] = new HtmlGenericControl("img");
+                search_a[i].Attributes.Add("href", "profile.aspx?user=" + flw_det.Rows[i]["url"]);
+                search_img[i].Attributes.Add("class", "searched_img");
+                search_img[i].Attributes.Add("src", String.Format("upimage/{0}", flw_det.Rows[i]["file_name"]));
+                search_a[i].Controls.Add(search_img[i]);
+                follow_list.Controls.Add(search_a[i]);
+            }
+
+        }
+
     }
 }
