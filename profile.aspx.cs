@@ -121,15 +121,15 @@ public partial class _Default : System.Web.UI.Page
     {
         if (user_browsing_dt.Rows[0]["follow_id"].ToString() == profileData.Rows[0]["user_id"].ToString())
         {
-            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large friendbutton" };
-            add_friend.Text = "following";
+            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large followbutton" };
+            add_friend.Text = "Siguiendo";
             are_friends.Controls.Add(add_friend);
         }
         else if(user_browsing_dt.Rows[0]["follow_id"].ToString() != profileData.Rows[0]["user_id"].ToString()
             && user_browsing_dt.Rows[0]["user_id"].ToString() != profileData.Rows[0]["user_id"].ToString())
         {
-            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large friendbutton" };
-            add_friend.Text = "follow";
+            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large followbutton" };
+            add_friend.Text = "Seguir";
             add_friend.Click += new EventHandler(add_Friend);
             are_friends.Controls.Add(add_friend);
         }
