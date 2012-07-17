@@ -3,14 +3,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
     <asp:Image ID="profilepic" class="profileImage" runat="server" Width="150px" Height="150px" /><br />
-    <asp:PlaceHolder ID="are_friends" runat="server"></asp:PlaceHolder>
-   <br />
     <asp:Label ID="name" runat="server" Text="Nombre"></asp:Label><br />
     <asp:Label ID="relationship_label" runat="server" Text="Relacion: "></asp:Label>
     <asp:Label ID="relationship" runat="server" Text="Relacion"></asp:Label><br />
     <asp:Label ID="looking_for_label" runat="server" Text="Estoy Buscando: "></asp:Label>
     <asp:Label ID="looking_for" runat="server" Text="Buscando"></asp:Label><br />
     <br />
+    <asp:PlaceHolder ID="are_friends" runat="server"></asp:PlaceHolder>
     <asp:Button ID="more_info" class="btn btn-primary menubutton" data-toggle="modal"
         href="#modal-more" runat="server" Text="Mas.." />
     <hr />

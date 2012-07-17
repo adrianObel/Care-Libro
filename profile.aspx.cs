@@ -31,7 +31,7 @@ public partial class _Default : System.Web.UI.Page
 
             //Variables to store Current Browser's name,last name 
             user_browsing_dt = db.query(String.Format("SELECT user.user_id,user.name,user.lastname"+
-                ",friend.friend_id FROM user LEFT JOIN friend ON (user.user_id = friend.user_id) WHERE user.email = '{0}'"
+                ",follow.follow_id FROM user LEFT JOIN follow ON (user.user_id = follow.user_id) WHERE user.email = '{0}'"
                 , Session["UserEmail"].ToString()));
             user_browsing_name = String.Format("{0} {1}", user_browsing_dt.Rows[0]["name"].ToString()
             , user_browsing_dt.Rows[0]["lastname"].ToString());
@@ -119,31 +119,25 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void areWeFriends()
     {
-        if (user_browsing_dt.Rows[0]["friend_id"].ToString() == profileData.Rows[0]["user_id"].ToString())
+        if (user_browsing_dt.Rows[0]["follow_id"].ToString() == profileData.Rows[0]["user_id"].ToString())
         {
             LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large friendbutton" };
-            add_friend.Text = "friends";
-            add_friend.Dispose();
-            //  add_friend.Click += new EventHandler(add_Friend);
-
+            add_friend.Text = "following";
             are_friends.Controls.Add(add_friend);
-            //<button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
-            //href="#modal-add">
-            // Agregar como amigo</button><br />
-            // <br />
         }
-        else
+        else if(user_browsing_dt.Rows[0]["follow_id"].ToString() != profileData.Rows[0]["user_id"].ToString()
+            && user_browsing_dt.Rows[0]["user_id"].ToString() != profileData.Rows[0]["user_id"].ToString())
         {
-            add_friend.Text = "friends";
-            add_friend.Dispose();
-            //  add_friend.Click += new EventHandler(add_Friend);
-
+            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large friendbutton" };
+            add_friend.Text = "follow";
+            add_friend.Click += new EventHandler(add_Friend);
             are_friends.Controls.Add(add_friend);
         }
     }
     protected void add_Friend(object sender,EventArgs e)
     {
-        write_wall.Text = " yup";
+        db.insert(string.Format("INSERT INTO follow(follow_id,user_id) VALUES('{0}','{1}')"
+            , profileData.Rows[0]["user_id"].ToString(), user_browsing_dt.Rows[0]["user_id"].ToString()));
        
     }
 
