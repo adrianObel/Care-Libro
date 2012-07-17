@@ -42,6 +42,6 @@ public partial class SiteMasterPage : System.Web.UI.MasterPage
     }
     protected void search_Click(object sender, EventArgs e)
     {
-        Response.Redirect("search.aspx?search="+search.Text);
+        Response.Redirect("search.aspx?search=" + search.Text);
     }
 }
