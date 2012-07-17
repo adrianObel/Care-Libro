@@ -3,9 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
     <asp:Image ID="profilepic" class="profileImage" runat="server" Width="150px" Height="150px" /><br />
-    <button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
-        href="#modal-add">
-        Agregar como amigo</button><br />
+    
     <br />
     <asp:Label ID="name" runat="server" Text="Nombre"></asp:Label><br />
     <asp:Label ID="relationship_label" runat="server" Text="Relacion: "></asp:Label>
@@ -13,8 +11,10 @@
     <asp:Label ID="looking_for_label" runat="server" Text="Estoy Buscando: "></asp:Label>
     <asp:Label ID="looking_for" runat="server" Text="Buscando"></asp:Label><br />
     <br />
-    <asp:Button ID="more_info" class="btn btn-primary menubutton" data-toggle="modal"
-        href="#modal-more" runat="server" Text="Mas.." />
+    <button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
+        href="#modal-add">
+        Agregar como amigo</button><asp:Button ID="more_info" class="btn btn-primary btn-large menubutton" data-toggle="modal"
+        href="#modal-more" runat="server" Text="Mas.." /><br />
     <hr />
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
