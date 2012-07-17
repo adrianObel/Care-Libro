@@ -33,10 +33,13 @@ public partial class _Default : System.Web.UI.Page
     {
         uid = db.query(String.Format("SELECT user_id FROM profile WHERE url='{0}'"
             , Request["user"].ToString())).Rows[0]["user_id"].ToString();
-        flw_det = db.query(String.Format("SELECT `profile`.url,follow.user_id,profile_photo.file_name "+
-                                         "FROM profile LEFT JOIN follow ON(profile.user_id = follow.follow_id) "+
-                                         " LEFT JOIN profile_photo ON(`profile`.user_id = profile_photo.user_id) " +
-                                         "WHERE follow.user_id = '{0}'",uid));
+        if (uid != null)
+        {
+            flw_det = db.query(String.Format("SELECT `profile`.url,follow.user_id,profile_photo.file_name " +
+                                             "FROM profile LEFT JOIN follow ON(profile.user_id = follow.follow_id) " +
+                                             " LEFT JOIN profile_photo ON(`profile`.user_id = profile_photo.user_id) " +
+                                             "WHERE follow.user_id = '{0}'", uid));
+        }
         if (flw_det.Rows.Count != 0)
         {
             int n = flw_det.Rows.Count;

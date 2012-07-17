@@ -8,15 +8,10 @@ using System.Data;
 using System.Web.UI.HtmlControls;
 public partial class _Default : System.Web.UI.Page
 {
-    private DataTable profileData;
-    private DataTable more_info_table;
-    private DataTable user_browsing_dt;
     private DataTable user_publications;
     private DataTable is_followee;
     private string user_id;
-    private string user_browsing_name;
     private DataTable userData;
-    private string userid;
     private DBConnect db;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -59,8 +54,10 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void getPublications()
     {
-        user_publications = db.query(String.Format("SELECT user_id,made_by,message,created_at " +
-        "FROM `user_publication` ORDER BY created_at DESC LIMIT 30"));
+        user_publications = db.query(String.Format("SELECT user_publication.user_id,user_publication.made_by,user_publication.message,user_publication.created_at "+          
+                                                    "FROM user LEFT JOIN follow ON(user.user_id = follow.follow_id) LEFT JOIN user_publication "+
+                                                    "ON(user_publication.user_id = `user`.user_id) WHERE follow.user_id = {0} OR  user.user_id = {0} "+
+                                                    "ORDER BY user_publication.created_at DESC LIMIT 30",userData.Rows[0]["user_id"].ToString()));
         HtmlGenericControl[] div = new HtmlGenericControl[user_publications.Rows.Count];
         for (int i = 0; i < div.Length; i++)
         {

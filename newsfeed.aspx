@@ -28,6 +28,8 @@
     <div class="well">
         <h2>
             Aqui van las historias</h2>
+            <ul>
         <asp:PlaceHolder ID="publish_panel" runat="server"></asp:PlaceHolder>
+            </ul>
     </div>
 </asp:Content>
