@@ -7,7 +7,7 @@
         <li class="active">
             <asp:HyperLink ID="news" NavigateUrl="~/newsfeed.aspx" runat="server">Noticias</asp:HyperLink></li>
         <li>
-            <asp:HyperLink ID="followers" NavigateUrl="~/followers.aspx" runat="server">Seguidores</asp:HyperLink></li>
+            <asp:HyperLink ID="followers"  runat="server">Seguidores</asp:HyperLink></li>
         <li>
             <asp:HyperLink ID="photos" NavigateUrl="~/photos.aspx" runat="server">Fotos</asp:HyperLink></li>
     </ul>
