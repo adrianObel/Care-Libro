@@ -13,6 +13,7 @@ public partial class _Default : System.Web.UI.Page
     private DataTable more_info_table;
     private DataTable user_browsing_dt;
     private DataTable user_publications;
+    private DataTable is_followee;
     private string user_id;
     private string user_browsing_name;
     protected void Page_Load(object sender, EventArgs e)
@@ -31,8 +32,7 @@ public partial class _Default : System.Web.UI.Page
 
             //Variables to store Current Browser's name,last name 
             user_browsing_dt = db.query(String.Format("SELECT user.user_id,user.name,user.lastname"+
-                ",follow.follow_id FROM user LEFT JOIN follow ON (user.user_id = follow.user_id) WHERE user.email = '{0}'"
-                , Session["UserEmail"].ToString()));
+                " FROM user  WHERE user.email = '{0}'", Session["UserEmail"].ToString()));
             user_browsing_name = String.Format("{0} {1}", user_browsing_dt.Rows[0]["name"].ToString()
             , user_browsing_dt.Rows[0]["lastname"].ToString());
             if(profileData.Rows.Count == 0 )
@@ -119,20 +119,24 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void areWeFriends()
     {
-        if (user_browsing_dt.Rows[0]["follow_id"].ToString() == profileData.Rows[0]["user_id"].ToString())
+        is_followee = db.query(String.Format("SELECT * FROM follow WHERE user_id = '{0}' AND follow_id = '{1}'"
+            ,user_browsing_dt.Rows[0]["user_id"].ToString(),profileData.Rows[0]["user_id"].ToString()));
+        if (is_followee.Rows.Count == 0 && profileData.Rows[0]["user_id"].ToString() != user_browsing_dt.Rows[0]["user_id"].ToString())
         {
-            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large followbutton" };
-            add_friend.Text = "Siguiendo";
-            are_friends.Controls.Add(add_friend);
-        }
-        else if(user_browsing_dt.Rows[0]["follow_id"].ToString() != profileData.Rows[0]["user_id"].ToString()
-            && user_browsing_dt.Rows[0]["user_id"].ToString() != profileData.Rows[0]["user_id"].ToString())
-        {
-            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large followbutton" };
+            LinkButton add_friend = new LinkButton() { ID = "add_follower", CssClass = "btn btn-success btn-large followbutton" };
             add_friend.Text = "Seguir";
             add_friend.Click += new EventHandler(add_Friend);
             are_friends.Controls.Add(add_friend);
         }
+        else
+            if (is_followee.Rows.Count != 0 && is_followee.Rows[0]["follow_id"].ToString() == profileData.Rows[0]["user_id"].ToString()
+               && is_followee.Rows[0]["follow_id"].ToString() != user_browsing_dt.Rows[0]["user_id"].ToString())
+        {
+            LinkButton add_friend = new LinkButton() { ID = "add_follower", CssClass = "btn btn-success btn-large followbutton" };
+            add_friend.Text = "Siguiendo";
+            are_friends.Controls.Add(add_friend);
+        }
+    
     }
     protected void add_Friend(object sender,EventArgs e)
     {
