@@ -37,6 +37,7 @@ public partial class _Default : System.Web.UI.Page
                 Response.Redirect("newsfeed.aspx");
             else
                 initProfile();
+            if(!IsPostBack)
             getPublications();
         }
         else
@@ -111,7 +112,7 @@ public partial class _Default : System.Web.UI.Page
         db.insert(string.Format("INSERT INTO user_publication(user_id,made_by,message,created_at) VALUES" +
             "('{0}','{1}','{2}','{3}')", profileData.Rows[0]["user_id"].ToString()
             , user_browsing_name, write_wall.Text, time_sent));
-        
+        getPublications();
     }
 
 }
