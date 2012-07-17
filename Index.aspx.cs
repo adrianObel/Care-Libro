@@ -54,10 +54,19 @@ public partial class Index : System.Web.UI.Page
             Response.Redirect("newsfeed.aspx");
 
         }
-        else email.Text = "nope";
+        else
+        {
+            exists_label.Visible = false;
+            registration_succes_label.Visible = false;
+            no_login.Visible = true; 
+        }
     }
     protected void register_Click(object sender, EventArgs e)
     {
+        no_login.Visible=false;
+        exists_label.Visible = false;
+        registration_succes_label.Visible = true;
+
         this.pass = encrypt(password_field.Text);
         string gender = sex.SelectedItem.Text;
         string bdate = day.SelectedItem + "/" + month.SelectedItem + "/" + year.SelectedItem;
@@ -68,7 +77,9 @@ public partial class Index : System.Web.UI.Page
          "', 'false','" + crated + "'";
         if (db.getUser(mail.Text, pass))
         {
-            Response.Write("<script type='text/javascript'>alert('already exists')</script>");
+            registration_succes_label.Visible = false;
+            no_login.Visible = false;
+            exists_label.Visible=true;
         }
         else
         {

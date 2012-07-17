@@ -18,7 +18,7 @@
     <hr />
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
-        <li><a href="#">Amigos</a></li>
+        <li><a href="#">Seguidores</a></li>
         <li><a href="#">Fotos</a></li>
     </ul>
     <div id="modal-add" class="modal fade" style="display: none;">
@@ -45,57 +45,57 @@
         </div>
         <div class="modal-body form-horizontal">
             <div class="control-group">
-                <asp:Label ID="about_me_label_modal" runat="server" Text="Sobre mi: " class="control-label"></asp:Label>
+                <asp:Label ID="about_me_label_modal" runat="server" Text="Sobre mi: " class="control-label" Font-Bold="True"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="about_me_modal" runat="server" Text="Sobre mi"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="phone_label_modal" runat="server" Text="Numero de telefono: " class="control-label"></asp:Label>
+                <asp:Label ID="phone_label_modal" runat="server" Font-Bold="True" Text="Numero de telefono: " class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="phone_modal" runat="server" Text="Telefono"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="interests_label_modal" runat="server" Text="Intereses: " class="control-label"></asp:Label>
+                <asp:Label ID="interests_label_modal" runat="server" Font-Bold="True" Text="Intereses: " class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="interests_modal" runat="server" Text="Intereses"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="education_label_modal" runat="server" Text="Eduacacion: " class="control-label"></asp:Label>
+                <asp:Label ID="education_label_modal" runat="server" Font-Bold="True" Text="Eduacacion: " class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="edutacion_modal" runat="server" Text="Educacion"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="hobbies_label_modal" runat="server" Text="Hobbies: " class="control-label"></asp:Label>
+                <asp:Label ID="hobbies_label_modal" runat="server" Font-Bold="True" Text="Hobbies: " class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="hobbies_modal" runat="server" Text="Hobbies"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="favmovies_label_modal" runat="server" Text="Peliculas favoritas: "
+                <asp:Label ID="favmovies_label_modal" runat="server" Font-Bold="True" Text="Peliculas favoritas: "
                     class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="favmovies_modal" runat="server" Text="Peliculas"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="favartists_label_modal" runat="server" Text="Artistas favoritos: "
+                <asp:Label ID="favartists_label_modal" runat="server" Font-Bold="True" Text="Artistas favoritos: "
                     class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="favartists_modal" runat="server" Text="Artistas"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="favbooks_label_modal" runat="server" Text="Libros favoritos: " class="control-label"></asp:Label>
+                <asp:Label ID="favbooks_label_modal" runat="server" Font-Bold="True" Text="Libros favoritos: " class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="favbooks_modal" runat="server" Text="Libros"></asp:Label>
                 </div>
             </div>
             <div class="control-group">
-                <asp:Label ID="favanimals_label_modal" runat="server" Text="Animales favoritos: "
+                <asp:Label ID="favanimals_label_modal" runat="server" Font-Bold="True" Text="Animales favoritos: "
                     class="control-label"></asp:Label>
                 <div class="controls">
                     <asp:Label ID="favanimals_modal" runat="server" Text="Animales"></asp:Label>

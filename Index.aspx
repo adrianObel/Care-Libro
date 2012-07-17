@@ -141,6 +141,10 @@
                     <button class="btn btn-primary btn-large" data-toggle="modal" href="#modal-registro">
                         Registrarse</button>
                 </p>
+
+                <asp:Label ID="registration_succes_label" runat="server" Text="Te haz registrado en Care' Libro. Ahora puedes hacer login." Font-Size="Large" ForeColor="Lime" Visible="False"></asp:Label>
+                <asp:Label ID="no_login" runat="server" Text="Este usuario no esta registrado. ¡Registrate ahora!" Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
+                <asp:Label ID="exists_label" runat="server" Text="Ya este usuario existe, por favor elija otra cuenta de correo." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
             </div>
         </div>
         <div>
