@@ -23,16 +23,18 @@ public partial class _Default : System.Web.UI.Page
             db = new DBConnect();
             user_id = Request["user"].ToString();
 
-            //Variables to store Current Browser's name,last name 
-            user_browsing_dt = db.query(String.Format("SELECT user_id,name,lastname FROM user WHERE user.email = '{0}'"
-                , Session["UserEmail"].ToString()));
-            user_browsing_name = String.Format("{0} {1}", user_browsing_dt.Rows[0]["name"].ToString()
-            , user_browsing_dt.Rows[0]["lastname"].ToString());
             //Dataset Storing all Proflie's data
             profileData = db.query(String.Format("SELECT user.user_id,user.name,user.lastname,user.gender "+
            " ,user.online,profile.url,profile.relationship,profile.looking_for,profile_photo.file_name"+
             " FROM user LEFT JOIN profile ON (user.user_id = profile.user_id) LEFT JOIN profile_photo"+
             " ON (profile_photo.user_id = user.user_id) WHERE profile.url= '{0}' ",user_id));
+
+            //Variables to store Current Browser's name,last name 
+            user_browsing_dt = db.query(String.Format("SELECT user.user_id,user.name,user.lastname"+
+                ",friend.friend_id FROM user LEFT JOIN friend ON (user.user_id = friend.user_id) WHERE user.email = '{0}'"
+                , Session["UserEmail"].ToString()));
+            user_browsing_name = String.Format("{0} {1}", user_browsing_dt.Rows[0]["name"].ToString()
+            , user_browsing_dt.Rows[0]["lastname"].ToString());
             if(profileData.Rows.Count == 0 )
                 Response.Redirect("newsfeed.aspx");
             else
@@ -79,6 +81,7 @@ public partial class _Default : System.Web.UI.Page
             favbooks_modal.Text = more_info_table.Rows[0]["fav_books"].ToString();
             favanimals_modal.Text = more_info_table.Rows[0]["fav_animals"].ToString();
         }
+        areWeFriends();
     }
 
     /// <summary>
@@ -113,6 +116,29 @@ public partial class _Default : System.Web.UI.Page
             "('{0}','{1}','{2}','{3}')", profileData.Rows[0]["user_id"].ToString()
             , user_browsing_name, write_wall.Text, time_sent));
         getPublications();
+    }
+    protected void areWeFriends()
+    {
+        if (user_browsing_dt.Rows[0]["friend_id"].ToString() == profileData.Rows[0]["user_id"].ToString())
+        {
+            LinkButton add_friend = new LinkButton() { ID = "add_friend",CssClass="btn btn-success btn-large friendbutton"};
+            add_friend.Text = "friends";
+            add_friend.Dispose();
+          //  add_friend.Click += new EventHandler(add_Friend);
+            
+            are_friends.Controls.Add(add_friend);
+             //<button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
+        //href="#modal-add">
+       // Agregar como amigo</button><br />
+   // <br />
+        }
+        else
+            write_wall.Text = "not friends bitch";
+    }
+    protected void add_Friend(object sender,EventArgs e)
+    {
+        write_wall.Text = " yup";
+       
     }
 
 }
