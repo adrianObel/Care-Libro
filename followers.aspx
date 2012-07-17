@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMasterPage.master" AutoEventWireup="true"
-    CodeFile="friends.aspx.cs" Inherits="_Default" %>
+    CodeFile="followers.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="sidebar" runat="Server">
     <ul class="nav nav-list">
@@ -7,7 +7,7 @@
         <li>
             <asp:HyperLink ID="news" NavigateUrl="~/newsfeed.aspx" runat="server">Noticias</asp:HyperLink></li>
         <li class="active">
-            <asp:HyperLink ID="friends" NavigateUrl="~/friends.aspx" runat="server">Amigos</asp:HyperLink></li>
+            <asp:HyperLink ID="followers" NavigateUrl="~/followers.aspx" runat="server">Seguidores</asp:HyperLink></li>
         <li>
             <asp:HyperLink ID="photos" NavigateUrl="~/photos.aspx" runat="server">Fotos</asp:HyperLink></li>
     </ul>
@@ -15,7 +15,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="middle" runat="Server">
     <div class="hero-unit">
         <h1>
-            Estos son tus amigos
+            Estos son tus seguidores
         </h1>
         <p>
             Puedes conectarte con ellos dando click sobre su foto de perfil. ¡Intentalo!</p>
