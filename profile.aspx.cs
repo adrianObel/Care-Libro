@@ -63,6 +63,7 @@ public partial class _Default : System.Web.UI.Page
     protected void initProfile()
     {
         string profile_pic_url = profileData.Rows[0]["file_name"].ToString();
+        follow_link.NavigateUrl = "followers.aspx?user="+profileData.Rows[0]["url"].ToString();
         profilepic.ImageUrl = "~/upimage/"+ profile_pic_url;
         name.Text = profileData.Rows[0]["name"].ToString() +" "+ profileData.Rows[0]["lastname"].ToString();
         relationship.Text = profileData.Rows[0]["relationship"].ToString();

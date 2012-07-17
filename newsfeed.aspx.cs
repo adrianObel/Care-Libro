@@ -35,8 +35,10 @@ public partial class _Default : System.Web.UI.Page
     {
 
         userData = db.query("SELECT * FROM user LEFT OUTER JOIN profile ON " +
-            "(user.user_id = profile.user_id) WHERE  user.email = " +
-            "'" + Session["UserEmail"].ToString() + "'  ");
+            "(user.user_id = profile.user_id) WHERE  user.email = "+
+            "'" + Session["UserEmail"].ToString() +"'  ");
+        followers.NavigateUrl = "followers.aspx?user=" + userData.Rows[0]["url"].ToString(); ;
+
         if (userData.Rows[0]["profile_id"] == DBNull.Value)
         {
             createProfile();

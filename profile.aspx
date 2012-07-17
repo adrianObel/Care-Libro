@@ -16,7 +16,7 @@
     <hr />
     <ul class="nav nav-list">
         <li class="nav-header">Menú</li>
-        <li><a href="#">Seguidores</a></li>
+        <li><asp:HyperLink ID="follow_link" runat="server">Seguidores</asp:HyperLink></li>
         <li><a href="#">Fotos</a></li>
     </ul>
     <div id="modal-add" class="modal fade" style="display: none;">
