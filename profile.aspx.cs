@@ -121,19 +121,25 @@ public partial class _Default : System.Web.UI.Page
     {
         if (user_browsing_dt.Rows[0]["friend_id"].ToString() == profileData.Rows[0]["user_id"].ToString())
         {
-            LinkButton add_friend = new LinkButton() { ID = "add_friend",CssClass="btn btn-success btn-large friendbutton"};
+            LinkButton add_friend = new LinkButton() { ID = "add_friend", CssClass = "btn btn-success btn-large friendbutton" };
             add_friend.Text = "friends";
             add_friend.Dispose();
-          //  add_friend.Click += new EventHandler(add_Friend);
-            
+            //  add_friend.Click += new EventHandler(add_Friend);
+
             are_friends.Controls.Add(add_friend);
-             //<button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
-        //href="#modal-add">
-       // Agregar como amigo</button><br />
-   // <br />
+            //<button id="add_friend" class="btn btn-success btn-large friendbutton" data-toggle="modal"
+            //href="#modal-add">
+            // Agregar como amigo</button><br />
+            // <br />
         }
         else
-            write_wall.Text = "not friends bitch";
+        {
+            add_friend.Text = "friends";
+            add_friend.Dispose();
+            //  add_friend.Click += new EventHandler(add_Friend);
+
+            are_friends.Controls.Add(add_friend);
+        }
     }
     protected void add_Friend(object sender,EventArgs e)
     {
