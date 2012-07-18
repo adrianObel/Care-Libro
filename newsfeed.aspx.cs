@@ -8,10 +8,9 @@ using System.Data;
 using System.Web.UI.HtmlControls;
 public partial class _Default : System.Web.UI.Page
 {
-    private DataTable user_publications;
-    private DataTable is_followee;
-    private string user_id;
+    private DataTable profileData;
     private DataTable userData;
+    private DataTable user_publications;
     private DBConnect db;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -20,6 +19,7 @@ public partial class _Default : System.Web.UI.Page
         {
             db = new DBConnect();
             initSes();
+            if(!IsPostBack)
             getPublications();
         }
         else
@@ -54,10 +54,8 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void getPublications()
     {
-        user_publications = db.query(String.Format("SELECT user_publication.user_id,user_publication.made_by,user_publication.message,user_publication.created_at "+          
-                                                    "FROM user LEFT JOIN follow ON(user.user_id = follow.follow_id) LEFT JOIN user_publication "+
-                                                    "ON(user_publication.user_id = `user`.user_id) WHERE follow.user_id = {0} OR  user.user_id = {0} "+
-                                                    "ORDER BY user_publication.created_at DESC LIMIT 30",userData.Rows[0]["user_id"].ToString()));
+        user_publications = db.query(String.Format("SELECT user_id,made_by,message,created_at " +
+        "FROM `user_publication` ORDER BY created_at DESC LIMIT 30"));
         HtmlGenericControl[] div = new HtmlGenericControl[user_publications.Rows.Count];
         for (int i = 0; i < div.Length; i++)
         {
@@ -68,6 +66,15 @@ public partial class _Default : System.Web.UI.Page
             publish_panel.Controls.Add(div[i]);
         }
 
+    }
+    protected void send_message_Click(object sender,EventArgs e)
+    {
+        string time_sent = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+        db.insert(string.Format("INSERT INTO user_publication(user_id,made_by,message,created_at) VALUES" +
+            "('{0}','{1} {2}','{3}','{4}')", userData.Rows[0]["user_id"].ToString()
+            , userData.Rows[0]["name"].ToString(),userData.Rows[0]["lastname"].ToString()
+            , write_wall.Text, time_sent));
+        getPublications();
     }
 
 }

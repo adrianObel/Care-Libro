@@ -20,10 +20,11 @@
         <p>
             Desde aqui puedes ver lo que hacen tus amigos, sus fotos, sus comentarios... ¡Ademas
             de poder escribir tus propios pensamientos! Intentalo escribiendo aqui:</p>
-        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" pacleholder="¿Que estas pensando?"
+        <asp:TextBox ID="write_wall" runat="server" TextMode="MultiLine" placeholder="¿Que estas pensando?"
             Height="60px" Width="835px"></asp:TextBox>
         <p>
-            <a class="btn btn-primary btn-large">Enviar &raquo;</a></p>
+        <asp:LinkButton ID="send_message" CssClass="btn btn-primary btn-large" 
+        OnClick="send_message_Click" runat="server">Enviar &raquo;</asp:LinkButton></p>
     </div>
     <div class="well">
         <h2>
